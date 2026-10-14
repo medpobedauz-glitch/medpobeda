@@ -24,9 +24,11 @@ npm-debug.log*
 .vscode/
 .idea/
 .kilo/
+.vercel/
 # PDF import runtime and private source documents
 .venv-pdf/
 storage/pdf-imports/
 __pycache__/
 storage/backups/
 storage/pdf-validation/
+.vercel

@@ -1,0 +1,32 @@
+# Paid resources: review Render's price before applying this Blueprint.
+services:
+  - type: web
+    name: medpobeda-api
+    runtime: docker
+    repo: https://github.com/medpobedauz-glitch/medpobeda
+    branch: main
+    plan: 0.5c-512mb
+    region: singapore
+    healthCheckPath: /health
+    numInstances: 1
+    disk:
+      name: medpobeda-data
+      mountPath: /var/data
+      sizeGB: 10
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: TRUST_PROXY_HOPS
+        value: "1"
+      - key: DATABASE_PATH
+        value: /var/data/medpobeda.sqlite
+      - key: STORAGE_DIR
+        value: /var/data/uploads
+      - key: PDF_IMPORT_DIR
+        value: /var/data/pdf-imports
+      - key: PUBLIC_ORIGIN
+        sync: false

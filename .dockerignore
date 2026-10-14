@@ -1,0 +1,11 @@
+.git
+.env
+.env.*
+node_modules
+dist
+storage
+.venv-pdf
+.vercel
+.kilo
+.DS_Store
+*.log

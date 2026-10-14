@@ -10,6 +10,12 @@ const ROOT = path.resolve(__dirname, '..');
 // Load .env from the project root.
 dotenvConfig({ path: path.join(ROOT, '.env') });
 
+if (process.env.NODE_ENV === 'production' &&
+    (!process.env.SESSION_SECRET || process.env.SESSION_SECRET.length < 32 ||
+     /^(dev-insecure|replace-with)/.test(process.env.SESSION_SECRET))) {
+  throw new Error('Production requires a random SESSION_SECRET of at least 32 characters.');
+}
+
 function intEnv(name, fallback) {
   const v = parseInt(process.env[name] || '', 10);
   return Number.isFinite(v) ? v : fallback;
@@ -19,6 +25,7 @@ export const config = {
   root: ROOT,
   env: process.env.NODE_ENV || 'development', // 'development' | 'production'
   port: intEnv('PORT', 4000),
+  trustProxy: intEnv('TRUST_PROXY_HOPS', 0),
   sessionSecret: process.env.SESSION_SECRET || 'dev-insecure-in-memory-secret-change-me',
   cookieSecure: String(process.env.COOKIE_SECURE || 'false') === 'true',
   sessionTtlHours: intEnv('SESSION_TTL_HOURS', 8),

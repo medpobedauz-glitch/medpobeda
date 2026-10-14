@@ -40,6 +40,14 @@ const ROOT = path.resolve(__dirname, '..');
 runPendingMigrations();
 
 const app = express();
+app.disable('x-powered-by');
+if (config.trustProxy > 0) app.set('trust proxy', config.trustProxy);
+
+// Health probes must not create sessions or cookies.
+app.get('/health', (_req, res) => {
+  db.prepare('SELECT 1').get();
+  res.json({ status: 'ok', env: config.env });
+});
 
 // --- Body parsing ---
 app.use('/api/admin/qbank/import', express.json({limit:'8mb'}));
@@ -71,6 +79,7 @@ app.use(session({
   cookie: {
     secure: config.cookieSecure,
     httpOnly: true,
+    sameSite: 'lax',
     maxAge: config.sessionTtlHours * 60 * 60 * 1000,
   },
 }));
@@ -85,11 +94,6 @@ app.use('/media', express.static(config.storageDir));
 if (config.env === 'production') {
   app.use(express.static(path.join(ROOT, 'dist')));
 }
-
-// --- Health check (no auth required) ---
-app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', env: config.env });
-});
 
 // --- Admin API routes ---
 app.use('/api/admin/auth', adminAuthRouter);
