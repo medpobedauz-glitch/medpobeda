@@ -1,5 +1,8 @@
 # MedPobeda free deployment
 
+Production frontend: https://medpobeda.vercel.app
+Production backend: https://medpobeda-api.onrender.com
+
 ## Architecture
 
 Vercel serves the frontend and 3D assets. `/api/*`, `/media/*` and `/health` proxy to a Render **Free** Docker web service. Cookies stay on the frontend origin.
@@ -28,7 +31,7 @@ To check credentials privately before deployment, fill the ignored `.env.cloud` 
 ## Render backend
 
 1. Create a Blueprint from `medpobedauz-glitch/medpobeda`, branch `main`.
-2. Confirm Free compute, no disk and estimated cost **$0**. Set the four variables above and `PUBLIC_ORIGIN` to the eventual frontend HTTPS origin. Render generates a separate session secret.
+2. Confirm Free compute, no disk and estimated cost **$0**. Set the four variables above. `PUBLIC_ORIGIN` is configured for the frontend listed above. Render generates a separate session secret.
 3. Deploy. Migrations run against Turso on startup. Verify `/health` returns status `ok`.
 4. Free Render has no private shell. Run `npm run create-admin` locally against Turso with private environment variables: the Turso URL/token, `DATABASE_DRIVER=libsql`, `ADMIN_EMAIL`, `ADMIN_PASSWORD` (16+ characters) and optional `ADMIN_NAME`. Avoid putting credentials in command history. The command refuses to overwrite an existing account. Remove `ADMIN_PASSWORD` afterwards. Never run the development seed against the cloud database.
 

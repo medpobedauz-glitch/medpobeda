@@ -1,0 +1,13 @@
+.env
+.env.*
+storage
+.venv-pdf
+node_modules
+dist
+.git
+.kilo
+server
+scripts
+/admin
+Dockerfile
+render.yaml
