@@ -78,7 +78,7 @@ export class SqliteSessionStore extends session.Store {
     try {
       db.prepare(`
         INSERT INTO sessions (id, user_id, student_id, csrf_token, ip, user_agent, expires_at, data)
-        VALUES (@id, @userId, @studentId, @csrf, @ip, @ua, @expires, @data)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ON CONFLICT(id) DO UPDATE SET
           user_id = excluded.user_id,
           student_id = excluded.student_id,
@@ -87,16 +87,16 @@ export class SqliteSessionStore extends session.Store {
           user_agent = excluded.user_agent,
           expires_at = excluded.expires_at,
           data = excluded.data
-      `).run({
-        id: sid,
-        userId: session.user?.id ?? null,
-        studentId: session.student?.id ?? null,
-        csrf: session.csrfToken ?? '',
-        ip: session.ip ?? '',
-        ua: session.ua ?? '',
-        expires: expiresAt,
+      `).run(
+        sid,
+        session.user?.id ?? null,
+        session.student?.id ?? null,
+        session.csrfToken ?? '',
+        session.ip ?? '',
+        session.ua ?? '',
+        expiresAt,
         data,
-      });
+      );
       return callback(null);
     } catch (err) {
       return callback(err);
