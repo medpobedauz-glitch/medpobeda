@@ -23,6 +23,8 @@ SUPABASE_URL=https://YOUR-PROJECT.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=PRIVATE-SERVICE-ROLE-KEY
 ```
 
+To check credentials privately before deployment, fill the ignored `.env.cloud` file and run `node --env-file=.env.cloud scripts/check-cloud-connection.mjs`. This verifies Turso access and creates or verifies the private media bucket without copying local accounts or content. It prints no credential values. Keep the file out of Git and chat.
+
 ## Render backend
 
 1. Create a Blueprint from `medpobedauz-glitch/medpobeda`, branch `main`.
