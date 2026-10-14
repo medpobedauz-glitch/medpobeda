@@ -18,6 +18,7 @@ import { config } from './config.js';
 import { runPendingMigrations } from '../scripts/migrate.mjs';
 import { db } from './db/index.js';
 import { SqliteSessionStore } from './services/session-store.js';
+import { ensureMediaBucket, sendMediaFile } from './services/object-storage.js';
 import { bootstrapSessionUser, ensureCsrf } from './middleware/auth.js';
 import { attachStudent } from './middleware/student-auth.js';
 import { errorHandler } from './middleware/error.js';
@@ -38,6 +39,7 @@ const ROOT = path.resolve(__dirname, '..');
 
 // --- Run database migrations (idempotent) before serving any request ---
 runPendingMigrations();
+await ensureMediaBucket();
 
 const app = express();
 app.disable('x-powered-by');
@@ -90,7 +92,11 @@ app.use(attachStudent);
 app.use(ensureCsrf);
 
 // --- Static assets ---
-app.use('/media', express.static(config.storageDir));
+app.get('/media/:filename', async (req, res) => {
+  const media = db.prepare("SELECT * FROM media WHERE safe_filename=? AND status='active'").get(req.params.filename);
+  if (!media) return res.status(404).json({ error: 'Image not found.' });
+  await sendMediaFile(media, req, res);
+});
 if (config.env === 'production') {
   app.use(express.static(path.join(ROOT, 'dist')));
 }
@@ -101,9 +107,10 @@ app.use('/api/admin/content', adminContentRouter);
 app.use('/api/admin', adminQuestionsRouter);
 app.use('/api/admin', adminMediaRouter);
 app.use('/api/admin', adminUsersRouter);
-app.use('/api/admin/pdf-import', adminPdfImportRouter);
+if (config.pdfEnabled) app.use('/api/admin/pdf-import', adminPdfImportRouter);
+else app.use('/api/admin/pdf-import', (_req, res) => res.status(503).json({ error: 'PDF import is unavailable on this hosting plan. Use the local app to process PDFs.' }));
 app.use('/api/admin/qbank', adminQbankRouter);
-startPdfWorker();
+if (config.pdfEnabled) startPdfWorker();
 
 // --- Public API routes (student-facing, published content only) ---
 app.use('/api/public', publicLearnRouter);

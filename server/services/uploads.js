@@ -7,6 +7,7 @@ import crypto from 'node:crypto';
 import multer from 'multer';
 import { config } from '../config.js';
 import { db } from '../db/index.js';
+import { persistMediaFile, removeMediaFile } from './object-storage.js';
 
 // Allowed image types with magic-byte signatures.
 const IMAGE_MAGIC = {
@@ -157,16 +158,18 @@ export function validateImageSafe(req, file) {
 }
 
 // Inserts media metadata and returns the id.
-export function saveMediaRecord(file, { uploadedBy, altText, ip }) {
+export async function saveMediaRecord(file, { uploadedBy, altText, ip }) {
   const safeName = path.basename(file.filename);
   const fullPath = path.join(config.storageDir, safeName);
   const size = fs.statSync(fullPath).size;
   const dims = readImageSize(fullPath);
-  const info = db.prepare(`
+  const storagePath = await persistMediaFile(file, file.mimetype);
+  try {
+    const info = db.prepare(`
     INSERT INTO media (storage_path, original_filename, safe_filename, mime_type, size_bytes, width, height, alt_text, uploaded_by)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
   `).run(
-    fullPath,
+    storagePath,
     String(file.originalname || 'upload'),
     safeName,
     file.mimetype,
@@ -176,5 +179,15 @@ export function saveMediaRecord(file, { uploadedBy, altText, ip }) {
     altText || '',
     uploadedBy || null
   );
-  return info.lastInsertRowid;
+    return info.lastInsertRowid;
+  } catch (error) {
+    if (config.mediaStorage === 'supabase') {
+      try { await removeMediaFile({ storage_path: storagePath, safe_filename: safeName }); } catch { /* Preserve insert error. */ }
+    }
+    throw error;
+  } finally {
+    if (config.mediaStorage === 'supabase') {
+      try { await fs.promises.unlink(fullPath); } catch { /* Temporary file cleanup. */ }
+    }
+  }
 }

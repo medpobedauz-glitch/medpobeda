@@ -1,11 +1,14 @@
 // MedPobeda — media library service.
 // Usage lookups, archive, and safe delete with dependency checks.
-import fs from 'node:fs';
 import { db } from '../db/index.js';
+import { removeMediaFile } from './object-storage.js';
 
 // Finds every place an image is referenced.
 export function findMediaUsage(mediaId) {
   const usage = [];
+  for (const student of db.prepare('SELECT id FROM students WHERE photo_media_id = ?').all(mediaId)) {
+    usage.push({ type: 'profile_photo', id: student.id, label: 'Student profile photo' });
+  }
 
   // As a subject icon.
   const subjects = db.prepare('SELECT id, slug FROM subjects WHERE icon_media_id = ?').all(mediaId);
@@ -61,14 +64,14 @@ export function archiveMedia(id) {
   return getMedia(id);
 }
 
-export function deleteMedia(id) {
+export async function deleteMedia(id) {
   const m = getMedia(id);
   if (!m) return null;
   if (isMediaReferenced(id)) {
     return { error: 'This image is referenced by content and cannot be deleted. Archive it instead.' };
   }
   // Remove the file if it exists, then the row.
-  try { fs.unlinkSync(m.storage_path); } catch { /* file already gone */ }
+  await removeMediaFile(m);
   db.prepare('DELETE FROM media WHERE id = ?').run(id);
   return { deleted: true };
 }

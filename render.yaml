@@ -1,18 +1,14 @@
-# Paid resources: review Render's price before applying this Blueprint.
+# Free compute. Durable database and media live outside Render's ephemeral disk.
 services:
   - type: web
     name: medpobeda-api
     runtime: docker
     repo: https://github.com/medpobedauz-glitch/medpobeda
     branch: main
-    plan: 0.5c-512mb
+    plan: free
     region: singapore
     healthCheckPath: /health
     numInstances: 1
-    disk:
-      name: medpobeda-data
-      mountPath: /var/data
-      sizeGB: 10
     envVars:
       - key: NODE_ENV
         value: production
@@ -22,11 +18,27 @@ services:
         value: "true"
       - key: TRUST_PROXY_HOPS
         value: "1"
-      - key: DATABASE_PATH
-        value: /var/data/medpobeda.sqlite
+      - key: EPHEMERAL_HOST
+        value: "true"
+      - key: DATABASE_DRIVER
+        value: libsql
+      - key: TURSO_DATABASE_URL
+        sync: false
+      - key: TURSO_AUTH_TOKEN
+        sync: false
+      - key: MEDIA_STORAGE
+        value: supabase
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_MEDIA_BUCKET
+        value: medpobeda-media
       - key: STORAGE_DIR
-        value: /var/data/uploads
+        value: /tmp/medpobeda-uploads
       - key: PDF_IMPORT_DIR
-        value: /var/data/pdf-imports
+        value: /tmp/medpobeda-pdf-imports
+      - key: PDF_IMPORT_ENABLED
+        value: "false"
       - key: PUBLIC_ORIGIN
         sync: false

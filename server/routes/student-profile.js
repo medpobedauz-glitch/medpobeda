@@ -6,6 +6,8 @@ import { csrfProtection } from '../middleware/csrf.js';
 import { upload, validateImageSafe, saveMediaRecord } from '../services/uploads.js';
 import { config } from '../config.js';
 import * as profile from '../services/student-profile.js';
+import { db } from '../db/index.js';
+import { deleteMedia } from '../services/media.js';
 
 const router = Router();
 const bad = (res, msg) => res.status(400).json({ error: msg });
@@ -48,7 +50,6 @@ router.get('/profile', (req, res) => {
 });
 
 function getPhotoFilename(mediaId) {
-  const { db } = require('../db/index.js');
   return db.prepare('SELECT safe_filename FROM media WHERE id = ?').get(mediaId)?.safe_filename || null;
 }
 
@@ -83,8 +84,9 @@ router.put('/profile', csrfProtection, (req, res) => {
 });
 
 // POST /api/student/profile/photo  (multipart, field name: photo)
-router.post('/profile/photo', csrfProtection, (req, res) => {
-  upload(req, res, (err) => {
+router.post('/profile/photo', csrfProtection, (req, res, next) => {
+  upload(req, res, async (err) => {
+    try {
     if (err) return bad(res, 'Upload failed: ' + (err.message || 'invalid file.'));
     const file = req.file;
     if (!file) return bad(res, 'No file uploaded.');
@@ -94,25 +96,23 @@ router.post('/profile/photo', csrfProtection, (req, res) => {
       return bad(res, check.reason || 'Invalid image.');
     }
     // Resize / optimize if large (simple approach: re-save via sharp-like limit using canvas — here we just cap dimensions by checking)
-    const mediaId = saveMediaRecord(file, { uploadedBy: null, altText: 'profile_photo', ip: req.ip });
+    const mediaId = await saveMediaRecord(file, { uploadedBy: null, altText: 'profile_photo', ip: req.ip });
     profile.setProfilePhoto(req.student.id, mediaId);
     res.json({ ok: true, photo_url: `/media/${file.filename}` });
+    } catch (error) {
+      if (req.file?.path) { try { await fs.promises.unlink(req.file.path); } catch {} }
+      next(error);
+    }
   });
 });
 
 // DELETE /api/student/profile/photo
-router.delete('/profile/photo', csrfProtection, (req, res) => {
+router.delete('/profile/photo', csrfProtection, async (req, res) => {
   const s = profile.getStudentProfile(req.student.id);
-  if (s && s.photo_media_id) {
-    // Optionally remove the media file
-    try {
-      const { db } = require('../db/index.js');
-      const m = db.prepare('SELECT storage_path FROM media WHERE id = ?').get(s.photo_media_id);
-      if (m) fs.unlinkSync(m.storage_path);
-      db.prepare('DELETE FROM media WHERE id = ?').run(s.photo_media_id);
-    } catch { /* ignore */ }
-  }
   profile.removeProfilePhoto(req.student.id);
+  if (s && s.photo_media_id) {
+    await deleteMedia(s.photo_media_id);
+  }
   res.json({ ok: true });
 });
 

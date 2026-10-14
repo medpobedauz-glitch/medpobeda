@@ -2,14 +2,15 @@
 import { questionContentRevision } from '../services/question-answers.js';
 import { Router } from 'express';
 import { db } from '../db/index.js';
+import { sendMediaFile } from '../services/object-storage.js';
 import { renderExplanationBlocks } from '../services/explanations.js';
 import { publicChain, curriculumPublic, subjectPublic, modulePublic, topicPublic } from './public-common.js';
 
 const router = Router();
-router.get('/media/:id', (req, res) => {
-  const m = db.prepare("SELECT storage_path, mime_type FROM media WHERE id=? AND status='active'").get(Number(req.params.id));
+router.get('/media/:id', async (req, res) => {
+  const m = db.prepare("SELECT * FROM media WHERE id=? AND status='active'").get(Number(req.params.id));
   if (!m) return res.status(404).json({ error: 'Image not found.' });
-  res.type(m.mime_type).sendFile(m.storage_path);
+  await sendMediaFile(m, req, res);
 });
 
 // GET /api/public/learn/.../:topic/questions

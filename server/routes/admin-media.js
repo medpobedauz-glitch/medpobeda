@@ -39,8 +39,9 @@ router.get('/media/:id', requireRole('read'), (req, res) => {
 });
 
 // Upload (multipart, admin-authenticated)
-router.post('/media/upload', requireRole('write'), csrfProtection, (req, res) => {
-  upload(req, res, (err) => {
+router.post('/media/upload', requireRole('write'), csrfProtection, (req, res, next) => {
+  upload(req, res, async (err) => {
+    try {
     if (err) return bad(res, 'Upload failed: ' + (err.message || 'invalid file.'));
     const file = req.file;
     if (!file) return bad(res, 'No file was uploaded.');
@@ -50,9 +51,13 @@ router.post('/media/upload', requireRole('write'), csrfProtection, (req, res) =>
       return bad(res, check.reason || 'Invalid image file.');
     }
     const altText = String(req.body?.alt_text || '').trim();
-    const id = saveMediaRecord(file, { uploadedBy: req.user.id, altText, ip: req.ip });
+    const id = await saveMediaRecord(file, { uploadedBy: req.user.id, altText, ip: req.ip });
     audit(req.user.id, 'upload_media', 'media', id, file.originalname, { mime: file.mimetype, size: file.size }, req.ip);
     return res.status(201).json({ id });
+    } catch (error) {
+      if (req.file?.path) { try { await fs.promises.unlink(req.file.path); } catch {} }
+      next(error);
+    }
   });
 });
 
@@ -77,9 +82,9 @@ router.post('/media/:id/archive', requireRole('write'), csrfProtection, (req, re
 });
 
 // Delete (hard) — only when unreferenced, after explicit confirmation.
-router.post('/media/:id/delete', requireRole('delete'), csrfProtection, (req, res) => {
+router.post('/media/:id/delete', requireRole('delete'), csrfProtection, async (req, res) => {
   const id = Number(req.params.id);
-  const result = mediaService.deleteMedia(id);
+  const result = await mediaService.deleteMedia(id);
   if (!result) return res.status(404).json({ error: 'Media not found.' });
   if (result.error) return bad(res, result.error);
   audit(req.user.id, 'delete_media', 'media', id, 'deleted', {}, req.ip);
