@@ -1,0 +1,54 @@
+/* MedPobeda — Admin panel styles (scoped under .admin-*) */
+.admin-layout { display: flex; gap: 2rem; align-items: flex-start; padding: 2rem 0 4rem; }
+.admin-sidebar {
+  flex: 0 0 230px; background: #102a43; color: #fff; border-radius: 12px;
+  padding: 1.5rem 1rem; display: flex; flex-direction: column; gap: 1.25rem;
+  position: sticky; top: 1rem;
+}
+.admin-sidebar__brand { font-weight: 800; font-size: 1.05rem; padding: 0 .5rem; }
+.admin-sidebar__brand span { color: #f5a623; }
+.admin-nav { display: flex; flex-direction: column; gap: .25rem; }
+.admin-nav__link {
+  display: block; padding: .55rem .75rem; border-radius: 8px; color: #d9e2ec;
+  text-decoration: none; font-size: .95rem;
+}
+.admin-nav__link:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.admin-nav__link--active { background: #00072D; color: #fff; font-weight: 600; }
+.admin-nav__link--soon { opacity: .45; cursor: default; }
+.admin-nav__link--soon small { font-size: .65rem; text-transform: uppercase; margin-left: .25rem; }
+.admin-sidebar__logout { margin-top: auto; }
+.admin-main { flex: 1 1 auto; min-width: 0; }
+.admin-content { background: #fff; border: 1px solid #d9e2ec; border-radius: 12px; padding: 1.5rem; }
+.admin-topbar { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+.admin-topbar h1 { margin: 0; font-size: 1.4rem; }
+.admin-user { color: #486581; font-size: .9rem; }
+.admin-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.admin-stat { background: #f0f4f8; border-radius: 10px; padding: 1rem 1.25rem; }
+.admin-stat__value { font-size: 1.8rem; font-weight: 800; color: #102a43; }
+.admin-stat__label { color: #486581; font-size: .85rem; }
+.admin-table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.admin-table th, .admin-table td { text-align: left; padding: .6rem .75rem; border-bottom: 1px solid #e6ecf3; vertical-align: top; }
+.admin-table th { color: #486581; font-weight: 600; font-size: .8rem; text-transform: uppercase; }
+.admin-badge { display: inline-block; padding: .15rem .55rem; border-radius: 999px; font-size: .75rem; font-weight: 700; }
+.admin-badge--published { background: #d9f2e5; color: #147253; }
+.admin-badge--draft { background: #fdf3d7; color: #8a6d1a; }
+.admin-badge--archived, .admin-badge--archived_soon { background: #e6e6e6; color: #555; }
+.admin-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.admin-section-title { font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 .5rem; }
+.admin-empty { color: #486581; padding: 1rem 0; }
+.admin-empty--error { color: #b42318; }
+@media (max-width: 860px) { .admin-layout { flex-direction: column; } .admin-sidebar { position: static; flex-basis: auto; width: 100%; } }
+/* Question authoring */
+.admin-cascade { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+.admin-tabs { display: flex; gap: .35rem; border-bottom: 2px solid #e6ecf3; margin: 1.25rem 0 1rem; }
+.admin-tab { padding: .5rem 1.1rem; border: 1px solid #e6ecf3; border-bottom: none; border-radius: 8px 8px 0 0; background: #f0f4f8; cursor: pointer; font-weight: 600; color: #486581; }
+.admin-tab--active { background: #fff; color: #102a43; border-color: #d9e2ec; }
+.admin-tab--filled::after { content: ' ●'; color: #147253; font-size: .7rem; vertical-align: super; }
+.admin-opt-row { display: grid; grid-template-columns: 2.2rem 1fr auto; gap: .6rem; align-items: center; margin-bottom: .5rem; }
+.admin-opt-row .form-input { margin: 0; }
+.admin-correct { display: flex; align-items: center; gap: .3rem; font-size: .8rem; color: #486581; white-space: nowrap; }
+.admin-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.25rem; }
+.admin-hint { color: #486581; font-size: .85rem; margin: .35rem 0 0; }
+.admin-msg { padding: .6rem .9rem; border-radius: 8px; margin: .75rem 0; font-size: .9rem; }
+.admin-msg--ok { background: #d9f2e5; color: #147253; }
+.admin-msg--err { background: #fde8e8; color: #b02a2a; }

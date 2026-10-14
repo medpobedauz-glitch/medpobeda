@@ -1,0 +1,34 @@
+.qbank-premium { background:linear-gradient(180deg,#f5faff,#fff); padding:28px 0 64px; }
+.qbank-premium>.container { max-width:1380px; }
+.qbank-premium .qbank-card { padding:0; background:transparent; border:0; box-shadow:none; }
+.qbank-premium .qbank-toolbar { padding:0 0 18px; margin:0 0 20px; border-bottom:1px solid #dceaf5; }
+.qbank-premium .qbank-toolbar__stats { color:#4d6983; font-size:14px; font-weight:500; line-height:1.6; }
+.qbank-premium .qbank-status:empty { display:none; }
+.qbank-premium .qbank-status:not(:empty) { background:white; padding:28px; border-radius:16px; border:1px solid #deebf6; }
+.qbank-premium .qbank-grid { grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; align-items:stretch; }
+.qbank-premium .qcard { min-width:0; border:1px solid #d7eafa; border-radius:17px; background:white; box-shadow:0 3px 8px #1b669509,0 10px 28px #285b7c06; transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease; }
+.qbank-premium .qcard:hover { transform:translateY(-5px); border-color:#93cafa; box-shadow:0 14px 32px #1b66951a; }
+.qbank-premium .qcard:focus-visible { outline:3px solid #147ad8; outline-offset:4px; }
+.qbank-premium .qcard__art { height:auto; aspect-ratio:2.05; overflow:hidden; position:relative; }
+.qbank-premium .qcard__art svg.qcard__photo { display:block; width:100%; height:100%; }
+.qbank-premium .qcard__body { position:relative; padding:15px 17px 10px; background:inherit; border-radius:13px 13px 0 0; margin-top:-7px; }
+.qbank-premium .qcard__cur { align-self:flex-start; max-width:100%; border-radius:6px; padding:4px 7px; background:#ecf6ff; color:#1972be; font-size:9px; line-height:1.3; font-weight:700; letter-spacing:.04em; margin-bottom:10px; }
+.qbank-premium .qcard__title { font-size:18px; line-height:1.25; letter-spacing:-.025em; color:#0c2449; margin-bottom:8px; }
+.qbank-premium .qcard__desc { color:#6b8296; font-size:12px; line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.qbank-premium .qcard__foot { border:0; padding:12px 17px 18px; gap:8px; flex-wrap:wrap; }
+.qbank-premium .qcard__count { font-size:11px; color:#62819f; font-weight:500; }
+.qbank-premium .qcard__cta { font-size:11px; color:#0a3970; }
+.qbank-premium .qcard__dot { width:7px; height:7px; background:#08ae77; box-shadow:0 0 0 3px #08ae7710; }
+.qbank-premium .qcard--empty .qcard__dot { background:#93a5b8; box-shadow:none; }
+.qbank-premium .qcard:hover .qcard__cta { color:#006bd6; }
+.qbank-premium .qcard:hover .qcard__cta-arrow { transform:translateX(3px); }
+.qbank-premium .notice-pill { margin-top:28px; }
+@media(max-width:1050px) { .qbank-premium .qbank-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; } }
+@media(max-width:760px) { .qbank-premium .qbank-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; } }
+@media(max-width:440px) { .qbank-premium .qbank-grid { grid-template-columns:1fr; } .qbank-premium .qcard__art { aspect-ratio:2.35; } .qbank-premium .qcard__title { font-size:20px; } }
+body.dark-mode .qbank-premium { background:#0e1b2a; }
+body.dark-mode .qbank-premium .qcard,body.dark-mode .qbank-premium .qbank-status:not(:empty) { background:#182b40; border-color:#29445f; }
+body.dark-mode .qbank-premium .qcard__title,body.dark-mode .qbank-premium .qcard__cta { color:#e3f1ff; }
+body.dark-mode .qbank-premium .qcard__desc,body.dark-mode .qbank-premium .qcard__count,body.dark-mode .qbank-premium .qbank-toolbar__stats { color:#a7c1d9; }
+body.dark-mode .qbank-premium .qcard__cur { background:#213e59; color:#9ed3ff; }
+@media(prefers-reduced-motion:reduce) { .qbank-premium .qcard,.qbank-premium .qcard__cta-arrow { transition:none; } .qbank-premium .qcard:hover { transform:none; } }

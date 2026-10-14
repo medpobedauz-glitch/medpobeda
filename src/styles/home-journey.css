@@ -1,0 +1,123 @@
+.med-journey { height: 440svh; position: relative; background: #081725; color: #edf7fa; }
+.med-journey__stage { height: 100svh; min-height: 600px; position: sticky; top: 0; overflow: hidden; isolation: isolate; background: radial-gradient(ellipse at 65% 45%,#173d4c 0%,#0c2031 40%,#081725 78%); }
+.med-journey__ambient { position: absolute; width: 70vw; height: 70vw; max-width: 1000px; max-height: 1000px; border: 1px solid #b1e7ed12; border-radius: 50%; top: 50%; left: 65%; transform: translate(-50%,-50%); box-shadow: 0 0 0 90px #c7ecff03,0 0 0 180px #c7ecff02; pointer-events: none; }
+.med-journey__canvas { display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.med-journey__top { position: absolute; top: 30px; left: 5%; right: 5%; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 13px; font-weight: 600; }
+.med-journey__edition { color: #9bb5c3; font-weight: 400; margin-left: 12px; }
+.med-journey a { color: inherit; text-decoration: none; }
+.med-journey__top a { padding: 10px 0; border-bottom: 1px solid #c5eaf44a; }
+.med-journey__copy { position: absolute; left: 8%; top: 50%; transform: translateY(-50%); width: 35%; max-width: 490px; z-index: 2; pointer-events: none; }
+.med-journey[data-chapter="0"] .med-journey__copy { top: auto; bottom: 90px; transform: none; width: 84%; max-width: none; text-align: center; }
+.med-journey__chapter[hidden] { display: none; }
+.med-journey__eyebrow { color: #69d5ce; font-size: 11px; font-weight: 600; letter-spacing: .2em; margin-bottom: 20px; }
+.med-journey__chapter h1,.med-journey__chapter h2 { color: #f0f8fc; font-size: clamp(36px,4.6vw,74px); font-weight: 500; line-height: 1.06; letter-spacing: -.045em; margin: 0 0 20px; text-wrap: balance; }
+.med-journey[data-chapter="0"] h1 { font-size: clamp(30px,3.4vw,52px); }
+.med-journey__description { color: #acc6d4; font-size: 16px; line-height: 1.75; max-width: 390px; }
+.med-journey[data-chapter="0"] .med-journey__description { margin: auto; max-width: 560px; }
+.med-journey__links { display: flex; align-items: flex-start; flex-direction: column; gap: 18px; margin-top: 28px; pointer-events: auto; font-size: 14px; }
+.med-journey__links a:first-child { background: #83e7d8; color: #082631; padding: 14px 24px; border-radius: 9px; font-weight: 600; }
+.med-journey__links a:hover { text-decoration: underline; }
+.med-journey__bottom { position: absolute; left: 5%; right: 5%; bottom: 24px; display: flex; justify-content: space-between; align-items: center; gap: 12px; z-index: 3; }
+.med-journey__scroll { font-size: 12px; color: #a7c0ce; }
+.med-journey__bottom nav { display: flex; gap: 8px; }
+.med-journey__bottom button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid #b8e7ed30; color: #acc6d4; background: #112a3a; font: inherit; font-size: 12px; cursor: pointer; }
+.med-journey__bottom button[aria-current="step"] { background: #83e7d8; color: #082631; border-color: #83e7d8; }
+.med-journey :focus-visible { outline: 3px solid #83e7d8; outline-offset: 5px; }
+.med-journey__progress { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: #ffffff12; }
+.med-journey__progress span { display: block; height: 100%; background: #83e7d8; transform-origin: left; transform: scaleX(0); }
+.med-journey__fallback { display: none; }
+.med-journey--fallback { height: auto; }
+.med-journey--fallback .med-journey__stage { height: auto; min-height: 100svh; padding: 130px 8% 110px; }
+.med-journey--fallback .med-journey__canvas,.med-journey--fallback .med-journey__bottom { display: none; }
+.med-journey--fallback .med-journey__copy { position: relative; inset: auto; transform: none; width: 100%; max-width: 1100px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; text-align: left; }
+.med-journey--fallback .med-journey__chapter[hidden] { display: block; }
+.med-journey--fallback .med-journey__description { margin: 0 !important; }
+#home-information { scroll-margin-top: 90px; }
+@media(max-width:699px) {
+  .med-journey { height: 420svh; }
+  .med-journey__stage { min-height: 620px; }
+  .med-journey__edition { display: none; }
+  .med-journey__top { top: 20px; font-size: 11px; }
+  .med-journey__canvas { top: -7%; height: 100%; }
+  .med-journey__copy,.med-journey[data-chapter="0"] .med-journey__copy { top: auto; bottom: 95px; left: 7%; width: 86%; max-width: none; transform: none; text-align: center; }
+  .med-journey__chapter h1,.med-journey__chapter h2 { font-size: 34px; margin-bottom: 12px; }
+  .med-journey__eyebrow { margin-bottom: 12px; font-size: 9px; }
+  .med-journey__description { font-size: 13px; line-height: 1.5; max-width: 330px; margin: auto; }
+  .med-journey__links { margin-top: 16px; gap: 12px; align-items: center; font-size: 12px; }
+  .med-journey__links a:first-child { padding: 10px 18px; }
+  .med-journey__scroll { max-width: 120px; font-size: 10px; }
+  .med-journey__bottom nav { gap: 5px; }
+  .med-journey[data-chapter="3"] .med-journey__canvas { top: -13%; }
+  .med-journey--fallback { height: auto; }
+  .med-journey--fallback .med-journey__copy { position: relative; inset: auto; width: 100%; grid-template-columns: 1fr; }
+}
+
+/* Warm studio key light, ocean-blue backdrop and a quieter mint accent. */
+.med-journey__stage { background: radial-gradient(ellipse at 70% 35%,#295369 0%,#142f48 38%,#091b30 78%); }
+.med-journey__ambient { border-color: #9ad4e91c; box-shadow: 0 0 0 90px #a5d5f005,0 0 0 180px #a5d5f003; }
+.med-journey__chapter { animation: journey-copy-in .5s ease both; }
+@keyframes journey-copy-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.med-journey__links a { transition: background .2s ease, box-shadow .2s ease; }
+.med-journey__links a:first-child:hover { background: #a3f1e3; box-shadow: 0 8px 30px #66daca25; }
+@media(prefers-reduced-motion:reduce) { .med-journey__chapter { animation: none; } .med-journey__links a { transition: none; } }
+.med-journey__country { display: inline-flex; align-items: center; gap: 7px; margin-left: 16px; padding: 7px 11px; border: 1px solid #b7dee52e; border-radius: 100px; color: #d3eaf2; background: #ffffff06; font-size: 11px; font-weight: 500; vertical-align: middle; }
+.med-journey__country [role="img"] { font-size: 20px; line-height: 1; }
+@media(max-width:699px) { .med-journey__country { margin-left: 8px; padding: 5px 8px; font-size: 10px; } .med-journey__top { gap: 8px; } }
+/* Orange chapter cues and clear blue titles carry the medical journey. */
+.med-journey__eyebrow { color: #ffb16b; font-weight: 700; letter-spacing: .16em; }
+.med-journey__chapter h1,.med-journey__chapter h2 { color: #8dceff; text-shadow: 0 3px 24px #07192d60; }
+.med-journey__description { color: #d4e4ee; }
+.med-journey__links a:first-child { background: #ffad66; color: #182a3e; }
+.med-journey__links a:first-child:hover { background: #ffc28e; box-shadow: 0 8px 30px #ffad6626; }
+.med-journey__bottom button[aria-current="step"] { background: #ffad66; border-color: #ffad66; color: #172d42; }
+.med-journey__progress span { background: linear-gradient(90deg,#64b9ff,#ffad66); }
+.med-journey__country { background: #ffffff10; border-color: #95c7e955; padding: 9px 14px; }
+.med-journey__country [role="img"] { font-size: 27px; }
+@media(max-width:699px) { .med-journey__country { padding: 5px 8px; } .med-journey__country [role="img"] { font-size: 23px; } }
+
+/* Reference-inspired daylight desk; each chapter takes half a viewport of scroll. */
+.med-journey { height: 250svh; --desk-opacity: 1; }
+.med-journey__stage { background: radial-gradient(ellipse at 70% 45%,#e0f2ff,#f6fbff 72%); }
+.med-journey__desk { position: absolute; inset: 0; background: url('/images/home/medical-desk-hero.png') center/100% 100% no-repeat; opacity: var(--desk-opacity); pointer-events: none; }
+.med-journey__ambient { display: none; }
+.med-journey__top { color: #173a5d; }
+.med-journey__edition { color: #486780; }
+.med-journey__country { color: #075caf; background: #e5f3ff; border-color: #c6e3f9; }
+.med-journey__top a { border-color: #a6c9e5; }
+.med-journey__chapter h1,.med-journey__chapter h2 { color: #096ae0; text-shadow: none; font-weight: 700; }
+.med-journey__eyebrow { color: #b9570c; }
+.med-journey__description { color: #425e78; }
+.med-journey__scroll { color: #446784; }
+.med-journey__bottom button { color: #13558f; background: #eef7ff; border-color: #c7dff0; }
+.med-journey[data-chapter="0"] .med-journey__copy { top: 47%; bottom: auto; transform: translateY(-50%); left: 5%; width: 44%; max-width: 620px; text-align: left; }
+.med-journey[data-chapter="0"] h1 { font-size: clamp(32px,3.9vw,64px); line-height: 1.08; }
+.med-journey[data-chapter="0"] .med-journey__description { margin: 0; max-width: 470px; font-size: 17px; }
+.med-journey__links { flex-direction: row; flex-wrap: wrap; align-items: center; }
+.med-journey__links a:first-child { background: #096ae0; color: white; }
+.med-journey__links a:first-child:hover { background: #0758bd; }
+.med-journey__links a:last-child { color: #075caf; }
+.med-journey--fallback { height: auto; }
+.med-journey--fallback .med-journey__desk { display: none; }
+.med-journey--fallback .med-journey__copy { position: relative; inset: auto; transform: none; width: 100%; max-width: none; }
+@media(max-width:699px) {
+ .med-journey { height: 250svh; }
+ .med-journey__desk { top: 36%; background-size: 155% 100%; background-position: 80% center; }
+ .med-journey[data-chapter="0"] .med-journey__copy { top: 80px; bottom: auto; left: 7%; width: 86%; transform: none; text-align: left; }
+ .med-journey[data-chapter="0"] h1 { font-size: clamp(26px,7vw,34px); }
+ .med-journey[data-chapter="0"] .med-journey__description { font-size: 13px; }
+ .med-journey[data-chapter="0"] .med-journey__eyebrow { font-size: 8px; }
+ .med-journey[data-chapter="0"] .med-journey__links { margin-top: 12px; flex-direction: row; }
+ .med-journey__canvas { top: 0; }
+ .med-journey--fallback { height: auto; }
+ .med-journey--fallback .med-journey__copy { top: auto; left: auto; width: 100%; }
+}
+
+/* A small freestanding national flag beside the portrait, in the background. */
+.med-journey__flag-display { position:absolute; right:4%; top:19%; width:clamp(105px,13vw,190px); height:220px; opacity:1; transition:opacity .35s ease; pointer-events:none; }
+.med-journey[data-chapter="0"] .med-journey__flag-display { opacity:0; }
+.med-journey__flag-display img { position:absolute; top:6px; left:5px; width:100%; height:auto; border-radius:1px 3px 3px 1px; box-shadow:3px 5px 14px #183e5b16; transform:rotate(-3deg); transform-origin:0 0; }
+.med-journey__flag-pole { position:absolute; left:0; top:0; width:4px; height:100%; border-radius:3px; background:linear-gradient(90deg,#a7b2bd,#f7fafc,#8497a7); }
+.med-journey__flag-pole::before { content:''; position:absolute; width:9px; height:9px; border-radius:50%; background:#b6a168; top:-7px; left:-2px; }
+.med-journey__flag-base { position:absolute; bottom:-3px; left:-19px; width:43px; height:8px; border-radius:50%; background:linear-gradient(#bdc8d2,#8495a4); box-shadow:0 6px 12px #24435c18; }
+@media(max-width:699px) { .med-journey__flag-display { right:5%; top:19%; width:82px; height:140px; } }
+@media(prefers-reduced-motion:reduce) { .med-journey__flag-display { transition:none; } }

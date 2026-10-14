@@ -1,0 +1,22 @@
+#pdf-import-page { min-width: 0; }
+.admin-layout:has(#pdf-import-page) .admin-main { width: 100%; }
+#pdf-import-page h2 { margin-top: 1.5rem; }
+#pdf-import-page .form-field { display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
+#pdf-import-page .pi-fields { display: flex; flex-wrap: wrap; align-items: end; gap: .65rem; margin: 1rem 0; }
+#pdf-import-page .pi-fields > .form-field { flex: 1 1 150px; }
+#pdf-import-page .form-input { width: 100%; min-width: 0; }
+.pi-table-wrap { max-width: 100%; overflow: auto; }
+.pi-job-actions { display: flex; flex-wrap: wrap; gap: .35rem; min-width: 250px; max-width: 460px; }
+.pi-job-actions input[type=number] { width: 65px; }
+#pdf-import-page .btn { white-space: normal; font-size: .85rem; }
+.pi-error { color: #b02a2a; font-size: .85rem; overflow-wrap: anywhere; }
+.pi-review-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 1.25rem; }
+.pi-review-grid .form-field { margin-bottom: .7rem; }
+.pi-source-image { width: 100%; height: auto; border: 1px solid #d9e2ec; }
+.pi-images { display: flex; flex-wrap: wrap; gap: .65rem; margin: .75rem 0; }
+.pi-images > div, .pi-images > button { width: 160px; }
+.pi-images img { display: block; width: 100%; max-height: 160px; object-fit: contain; }
+#pdf-import-page [hidden] { display: none !important; }
+#pi-tax-tree { max-height: 350px; overflow: auto; }
+#pi-tax-tree p { margin-left: 1rem; }
+@media(max-width:1000px) { .pi-review-grid { grid-template-columns: minmax(0,1fr); } }

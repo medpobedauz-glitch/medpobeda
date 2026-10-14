@@ -1,0 +1,28 @@
+.home-discover,.home-quiz{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding-top:90px;padding-bottom:90px}
+.home-kicker{font-size:12px!important;font-weight:800;letter-spacing:1.7px;color:#e78b18!important;margin-bottom:16px}
+.home-discover h2,.home-explore h2,.home-quiz h2{font-size:clamp(30px,3.4vw,48px);line-height:1.14;letter-spacing:-1.4px;color:var(--text-primary,#0b2448);margin:0 0 22px}
+.home-discover p,.home-explore p,.home-quiz p{font-size:16px;line-height:1.8;color:var(--text-secondary,#62748b)}
+.home-discover__links{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.home-discover figure{margin:0;position:relative;transform:rotate(1deg);border-radius:25px;overflow:hidden;box-shadow:0 22px 60px #17467221}
+.home-discover figure img{display:block;width:100%;height:420px;object-fit:cover}
+.home-discover figcaption{position:absolute;bottom:18px;left:18px;right:18px;display:flex;justify-content:space-between;gap:12px;padding:16px 20px;background:#fffffff0;border-radius:12px;color:#092951;font-weight:750;font-size:14px}
+.home-explore{padding:80px 0;background:linear-gradient(120deg,#f0f8ff,#f6f5ff);scroll-margin-top:90px}
+.home-explore__intro{max-width:720px}
+.home-explore__tabs{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0 24px}
+.home-explore__tabs button{border:1px solid #dbe7f5;background:#fff;padding:13px 24px;border-radius:50px;color:#476381;font:inherit;font-weight:650;cursor:pointer;transition:background .2s,color .2s}
+.home-explore__tabs button[aria-selected=true]{background:#0878ef;color:#fff;border-color:#0878ef;box-shadow:0 5px 16px #0878ef22}
+.home-explore__panel{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:55px;align-items:center;padding:35px;background:var(--bg-primary,#fff);border:1px solid #ddeafb;border-radius:24px;box-shadow:0 12px 40px #17467209}
+.home-explore__panel img{width:100%;height:auto;border-radius:18px}
+.home-explore__panel h3{font-size:30px;line-height:1.2;margin-bottom:14px;color:var(--text-primary,#0b2448)}
+.home-explore__tags{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 28px}.home-explore__tags span{padding:7px 12px;background:#ecf5ff;color:#3974ad;border-radius:8px;font-size:12px}
+.home-quiz__card{padding:32px;border:1px solid #dbe8f7;border-radius:22px;box-shadow:0 15px 45px #17467212;background:var(--bg-primary,#fff)}
+.home-quiz__card h3{font-size:23px;line-height:1.4;margin-bottom:22px;color:var(--text-primary,#0b2448)}
+.home-quiz__answers{display:grid;gap:10px}.home-quiz__answers button{display:flex;align-items:center;gap:15px;text-align:left;width:100%;padding:12px;border:1px solid #dce5ef;border-radius:10px;background:transparent;color:var(--text-primary,#0b2448);font:inherit;cursor:pointer}
+.home-quiz__answers button span{padding:5px 11px;border-radius:6px;background:#edf5ff;color:#3076b9;font-weight:700}
+.home-quiz__answers button:hover:enabled{border-color:#1583f4;background:#f1f8ff}.home-quiz__answers button.is-correct{border-color:#11a878;background:#eafaf3;color:#12694d}.home-quiz__answers button.is-wrong{border-color:#df8972;background:#fff3ef;color:#944f3b}
+.home-quiz__reset{border:0;background:transparent;color:#0878ef;font:inherit;font-weight:700;cursor:pointer}.home-quiz__reset[hidden]{display:none}
+#home-quiz-feedback{font-size:14px;margin-top:16px}.home-explore button:focus-visible,.home-quiz button:focus-visible{outline:3px solid #ffad38;outline-offset:3px}
+body.dark-mode .home-explore{background:#111e30}body.dark-mode .home-explore__tabs button:not([aria-selected=true]){background:#1d3049;color:#cee0f3;border-color:#314761}
+@media(max-width:800px){.home-discover,.home-quiz{grid-template-columns:1fr;gap:30px;padding-top:55px;padding-bottom:55px}.home-discover figure img{height:340px}.home-explore__panel{gap:25px;padding:24px;grid-template-columns:220px 1fr}}
+@media(max-width:560px){.home-explore__panel{grid-template-columns:1fr}.home-explore__panel img{max-width:260px;justify-self:center}.home-explore__tabs button{padding:10px 15px;font-size:13px}.home-explore{padding:50px 0}.home-discover figure img{height:290px}.home-quiz__card{padding:22px}}
+@media(prefers-reduced-motion:reduce){.home-explore__tabs button{transition:none}}

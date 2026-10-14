@@ -1,0 +1,35 @@
+/* Scoped explanation typography shared by preview and student output. */
+.explanation-content, .ex-author .ql-editor { line-height: 1.7; overflow-wrap: anywhere; font-family: inherit; font-size: 1rem; color: inherit; }
+.explanation-content p, .ex-author .ql-editor p { margin: 0 0 1em; }
+.explanation-content h2, .ex-author .ql-editor h2 { font-size: 1.25rem; line-height: 1.4; margin: 1.4em 0 .6em; }
+.explanation-content h3, .ex-author .ql-editor h3 { font-size: 1.1rem; line-height: 1.4; margin: 1.2em 0 .5em; }
+.explanation-content ul, .explanation-content ol, .ex-author .ql-editor ol { margin: .6em 0 1em; padding-left: 1.6em; }
+.explanation-content ul { list-style: disc; }
+.explanation-content ol { list-style: decimal; }
+.explanation-content li { margin: .3em 0; }
+.explanation-content > :first-child { margin-top: 0; }
+.explanation-content img, .ex-legacy-block img { max-width: 100%; height: auto; }
+.explanation-content table, .ex-legacy-block table { display: block; max-width: 100%; overflow: auto; border-collapse: collapse; }
+.explanation-content td, .ex-legacy-block td { border: 1px solid #d9e2ec; padding: .5em; }
+.ex-size-small { font-size: .85em; }.ex-size-large { font-size: 1.25em; }
+.ex-align-center { text-align: center; }.ex-align-right { text-align: right; }.ex-align-justify { text-align: justify; }
+.ex-author { border: 1px solid #d9e2ec; border-radius: 6px; overflow: hidden; }
+.ex-mode { display: flex; gap: .4rem; padding: .5rem; border-bottom: 1px solid #d9e2ec; }
+.ex-mode .btn { padding: .25rem .65rem; font-size: .85rem; }
+.ex-mode [aria-pressed=true] { font-weight: 700; }
+.ex-toolbar { display: flex; flex-wrap: wrap; gap: .25rem; padding: .5rem; background: #f8fafc; border-bottom: 1px solid #d9e2ec; }
+.ex-toolbar button, .ex-toolbar select { font: inherit; font-size: .8rem; color: #102a43; background: #fff; border: 1px solid #d9e2ec; border-radius: 4px; min-height: 32px; padding: .25rem .4rem; max-width: 100%; }
+.ex-toolbar button { min-width: 32px; cursor: pointer; }
+.ex-toolbar button svg { width: 18px; height: 18px; }
+.ex-toolbar .ql-stroke { stroke: currentColor; fill: none; stroke-width: 2; }
+.ex-toolbar .ql-fill { fill: currentColor; }
+.ex-toolbar .ql-active { background: #e0edf7; }
+.ex-toolbar :focus-visible, .ex-author .ql-editor:focus-visible { outline: 2px solid #2563eb; outline-offset: -2px; }
+.ex-author .ql-editor { min-height: 200px; max-height: 600px; padding: 1rem; white-space: pre-wrap; }
+.ex-preview { padding: 1rem; min-height: 200px; }
+.ex-author [hidden] { display: none !important; }
+
+.ex-author .ql-editor .ql-size-small { font-size: .85em; }
+.ex-author .ql-editor .ql-size-large { font-size: 1.25em; }
+.pq__expl .explanation-content p { margin: 0 0 1em; }
+.pq__expl .explanation-content ul, .pq__expl .explanation-content ol { margin: .6em 0 1em; padding-left: 1.6em; }

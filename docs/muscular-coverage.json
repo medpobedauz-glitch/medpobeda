@@ -1,0 +1,1529 @@
+{
+  "sourceStructures": 422,
+  "supplementalStructures": 8,
+  "selectableMusculoskeletalStructures": 417,
+  "triangles": 703206,
+  "hasTextureCoordinates": false,
+  "hasTextures": false,
+  "regions": {
+    "head-neck": 88,
+    "foot": 36,
+    "leg": 28,
+    "thigh": 36,
+    "gluteal": 18,
+    "thorax": 21,
+    "pelvis": 16,
+    "abdomen": 10,
+    "back": 64,
+    "hand": 24,
+    "shoulder": 14,
+    "forearm": 46,
+    "arm": 16
+  },
+  "unannotatedLayers": 318,
+  "unknownSides": [
+    {
+      "id": "bp3d_FJ1450",
+      "name": "superficial perineal muscle"
+    },
+    {
+      "id": "bp3d_FJ1450M",
+      "name": "External anal sphincter"
+    },
+    {
+      "id": "bp3d_FJ1451",
+      "name": "external intercostal muscle"
+    },
+    {
+      "id": "bp3d_FJ1451M",
+      "name": "External intercostal muscle"
+    },
+    {
+      "id": "bp3d_FJ1454",
+      "name": "innermost intercostal muscle"
+    },
+    {
+      "id": "bp3d_FJ1454M",
+      "name": "Innermost intercostal muscle"
+    },
+    {
+      "id": "bp3d_FJ1455",
+      "name": "internal intercostal muscle"
+    },
+    {
+      "id": "bp3d_FJ1455M",
+      "name": "Internal intercostal muscle"
+    },
+    {
+      "id": "bp3d_FJ1525",
+      "name": "thoracic rotator"
+    },
+    {
+      "id": "bp3d_FJ1525M",
+      "name": "Thoracic rotator"
+    },
+    {
+      "id": "bp3d_FJ1543",
+      "name": "spinalis"
+    },
+    {
+      "id": "bp3d_FJ1543M",
+      "name": "Spinalis"
+    },
+    {
+      "id": "bp3d_FJ1547",
+      "name": "lateral lumbar intertransversarius"
+    },
+    {
+      "id": "bp3d_FJ1547M",
+      "name": "Lateral lumbar intertransversarius"
+    },
+    {
+      "id": "bp3d_FJ1548",
+      "name": "medial lumbar intertransversarius"
+    },
+    {
+      "id": "bp3d_FJ1548M",
+      "name": "Medial lumbar intertransversarius"
+    },
+    {
+      "id": "bp3d_FJ1549",
+      "name": "set of anterior cervical intertransversarii"
+    },
+    {
+      "id": "bp3d_FJ1549M",
+      "name": "Set of anterior cervical intertransversarii"
+    },
+    {
+      "id": "bp3d_FJ1550",
+      "name": "set of interspinales lumborum"
+    },
+    {
+      "id": "bp3d_FJ1550M",
+      "name": "Set of interspinales lumborum"
+    },
+    {
+      "id": "bp3d_FJ1552",
+      "name": "set of interspinales cervicis"
+    },
+    {
+      "id": "bp3d_FJ1552M",
+      "name": "Set of interspinales cervicis"
+    },
+    {
+      "id": "bp3d_FJ1553",
+      "name": "set of posterior cervical intertransversarii"
+    },
+    {
+      "id": "bp3d_FJ1553M",
+      "name": "Set of posterior cervical intertransversarii"
+    },
+    {
+      "id": "bp3d_FJ2543",
+      "name": "External anal sphincter"
+    },
+    {
+      "id": "bp3d_FJ2548",
+      "name": "External anal sphincter"
+    },
+    {
+      "id": "bp3d_FJ2762",
+      "name": "Uvular muscle"
+    },
+    {
+      "id": "bp3d_FJ2809",
+      "name": "Transverse arytenoid"
+    }
+  ],
+  "missing": [
+    {
+      "name": "frontalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "occipitalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "temporalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "masseter",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "orbicularis oculi",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "orbicularis oris",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "buccinator",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "zygomaticus major",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "zygomaticus minor",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "risorius",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "nasalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "mentalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "medial pterygoid",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "lateral pterygoid",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "pyramidalis",
+      "region": "abdomen",
+      "modelIds": []
+    },
+    {
+      "name": "latissimus dorsi",
+      "region": "back",
+      "modelIds": []
+    },
+    {
+      "name": "levator scapulae",
+      "region": "back",
+      "modelIds": []
+    },
+    {
+      "name": "multifidus",
+      "region": "back",
+      "modelIds": []
+    },
+    {
+      "name": "subscapularis",
+      "region": "shoulder",
+      "modelIds": []
+    },
+    {
+      "name": "palmaris brevis",
+      "region": "hand",
+      "modelIds": []
+    },
+    {
+      "name": "tensor fasciae latae",
+      "region": "gluteal",
+      "modelIds": []
+    },
+    {
+      "name": "extensor digitorum brevis",
+      "region": "foot",
+      "modelIds": []
+    }
+  ],
+  "coverage": [
+    {
+      "name": "frontalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "occipitalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "temporalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "masseter",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "orbicularis oculi",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "orbicularis oris",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "buccinator",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "zygomaticus major",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "zygomaticus minor",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "risorius",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "nasalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "mentalis",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "platysma",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1558",
+        "bp3d_FJ1587"
+      ]
+    },
+    {
+      "name": "sternocleidomastoid",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1573",
+        "bp3d_FJ1595"
+      ]
+    },
+    {
+      "name": "scalenus",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1570",
+        "bp3d_FJ1571",
+        "bp3d_FJ1572",
+        "bp3d_FJ1592",
+        "bp3d_FJ1593",
+        "bp3d_FJ1594"
+      ]
+    },
+    {
+      "name": "digastric",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1555",
+        "bp3d_FJ1556",
+        "bp3d_FJ1560",
+        "bp3d_FJ1578",
+        "bp3d_FJ1579"
+      ]
+    },
+    {
+      "name": "mylohyoid",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1562",
+        "bp3d_FJ1583"
+      ]
+    },
+    {
+      "name": "geniohyoid",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1559",
+        "bp3d_FJ1580"
+      ]
+    },
+    {
+      "name": "stylohyoid",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1576",
+        "bp3d_FJ1598"
+      ]
+    },
+    {
+      "name": "sternohyoid",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1574",
+        "bp3d_FJ1596"
+      ]
+    },
+    {
+      "name": "sternothyroid",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1575",
+        "bp3d_FJ1597"
+      ]
+    },
+    {
+      "name": "thyrohyoid",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1577",
+        "bp3d_FJ1599"
+      ]
+    },
+    {
+      "name": "omohyoid",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1565",
+        "bp3d_FJ1586"
+      ]
+    },
+    {
+      "name": "longus capitis",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1561",
+        "bp3d_FJ1582"
+      ]
+    },
+    {
+      "name": "longus colli",
+      "region": "head-neck",
+      "modelIds": [
+        "bp3d_FJ1557",
+        "bp3d_FJ1600",
+        "bp3d_FJ1601"
+      ]
+    },
+    {
+      "name": "medial pterygoid",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "lateral pterygoid",
+      "region": "head-neck",
+      "modelIds": []
+    },
+    {
+      "name": "pectoralis major",
+      "region": "thorax",
+      "modelIds": [
+        "bp3d_FJ1446",
+        "bp3d_FJ1446M",
+        "bp3d_FJ1447",
+        "bp3d_FJ1447M",
+        "bp3d_FJ1464",
+        "bp3d_FJ1464M"
+      ]
+    },
+    {
+      "name": "pectoralis minor",
+      "region": "thorax",
+      "modelIds": [
+        "bp3d_FJ1456",
+        "bp3d_FJ1456M"
+      ]
+    },
+    {
+      "name": "serratus anterior",
+      "region": "thorax",
+      "modelIds": [
+        "bp3d_FJ1459",
+        "bp3d_FJ1459M"
+      ]
+    },
+    {
+      "name": "external intercostal",
+      "region": "thorax",
+      "modelIds": [
+        "bp3d_FJ1451",
+        "bp3d_FJ1451M"
+      ]
+    },
+    {
+      "name": "internal intercostal",
+      "region": "thorax",
+      "modelIds": [
+        "bp3d_FJ1455",
+        "bp3d_FJ1455M"
+      ]
+    },
+    {
+      "name": "innermost intercostal",
+      "region": "thorax",
+      "modelIds": [
+        "bp3d_FJ1454",
+        "bp3d_FJ1454M"
+      ]
+    },
+    {
+      "name": "subclavius",
+      "region": "thorax",
+      "modelIds": [
+        "bp3d_FJ1460",
+        "bp3d_FJ1460M"
+      ]
+    },
+    {
+      "name": "transversus thoracis",
+      "region": "thorax",
+      "modelIds": [
+        "bp3d_FJ1461",
+        "bp3d_FJ1461M"
+      ]
+    },
+    {
+      "name": "diaphragm",
+      "region": "thorax",
+      "modelIds": [
+        "diaphragm"
+      ]
+    },
+    {
+      "name": "rectus abdominis",
+      "region": "abdomen",
+      "modelIds": [
+        "za_left_rectus_abdominis",
+        "za_right_rectus_abdominis"
+      ]
+    },
+    {
+      "name": "external oblique",
+      "region": "abdomen",
+      "modelIds": [
+        "bp3d_FJ1452",
+        "bp3d_FJ1452M"
+      ]
+    },
+    {
+      "name": "internal oblique",
+      "region": "abdomen",
+      "modelIds": [
+        "za_left_internal_oblique",
+        "za_right_internal_oblique"
+      ]
+    },
+    {
+      "name": "transversus abdominis",
+      "region": "abdomen",
+      "modelIds": [
+        "za_left_transversus_abdominis",
+        "za_right_transversus_abdominis"
+      ]
+    },
+    {
+      "name": "pyramidalis",
+      "region": "abdomen",
+      "modelIds": []
+    },
+    {
+      "name": "quadratus lumborum",
+      "region": "abdomen",
+      "modelIds": [
+        "za_left_quadratus_lumborum",
+        "za_right_quadratus_lumborum"
+      ]
+    },
+    {
+      "name": "trapezius",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1520",
+        "bp3d_FJ1520M",
+        "bp3d_FJ1521",
+        "bp3d_FJ1521M",
+        "bp3d_FJ1554",
+        "bp3d_FJ1554M"
+      ]
+    },
+    {
+      "name": "latissimus dorsi",
+      "region": "back",
+      "modelIds": []
+    },
+    {
+      "name": "rhomboid major",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1536",
+        "bp3d_FJ1536M"
+      ]
+    },
+    {
+      "name": "rhomboid minor",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1537",
+        "bp3d_FJ1537M"
+      ]
+    },
+    {
+      "name": "levator scapulae",
+      "region": "back",
+      "modelIds": []
+    },
+    {
+      "name": "iliocostalis",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1526",
+        "bp3d_FJ1526M",
+        "bp3d_FJ1527",
+        "bp3d_FJ1527M",
+        "bp3d_FJ1528",
+        "bp3d_FJ1528M"
+      ]
+    },
+    {
+      "name": "longissimus",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1533",
+        "bp3d_FJ1533M",
+        "bp3d_FJ1534",
+        "bp3d_FJ1534M",
+        "bp3d_FJ1535",
+        "bp3d_FJ1535M"
+      ]
+    },
+    {
+      "name": "spinalis",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1543",
+        "bp3d_FJ1543M",
+        "bp3d_FJ1544",
+        "bp3d_FJ1544M"
+      ]
+    },
+    {
+      "name": "multifidus",
+      "region": "back",
+      "modelIds": []
+    },
+    {
+      "name": "rotator",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1522",
+        "bp3d_FJ1522M",
+        "bp3d_FJ1524",
+        "bp3d_FJ1524M",
+        "bp3d_FJ1525",
+        "bp3d_FJ1525M"
+      ]
+    },
+    {
+      "name": "semispinalis",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1538",
+        "bp3d_FJ1538M",
+        "bp3d_FJ1539",
+        "bp3d_FJ1539M",
+        "bp3d_FJ1540",
+        "bp3d_FJ1540M"
+      ]
+    },
+    {
+      "name": "splenius",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1545",
+        "bp3d_FJ1545M",
+        "bp3d_FJ1546",
+        "bp3d_FJ1546M"
+      ]
+    },
+    {
+      "name": "intertransversarius",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1547",
+        "bp3d_FJ1547M",
+        "bp3d_FJ1548",
+        "bp3d_FJ1548M",
+        "bp3d_FJ1549",
+        "bp3d_FJ1549M",
+        "bp3d_FJ1553",
+        "bp3d_FJ1553M"
+      ]
+    },
+    {
+      "name": "interspinalis",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1550",
+        "bp3d_FJ1550M",
+        "bp3d_FJ1551",
+        "bp3d_FJ1551M",
+        "bp3d_FJ1552",
+        "bp3d_FJ1552M"
+      ]
+    },
+    {
+      "name": "serratus posterior",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1541",
+        "bp3d_FJ1541M",
+        "bp3d_FJ1542",
+        "bp3d_FJ1542M"
+      ]
+    },
+    {
+      "name": "levatores costarum",
+      "region": "back",
+      "modelIds": [
+        "bp3d_FJ1462",
+        "bp3d_FJ1462M",
+        "bp3d_FJ1463",
+        "bp3d_FJ1463M"
+      ]
+    },
+    {
+      "name": "deltoid",
+      "region": "shoulder",
+      "modelIds": [
+        "bp3d_FJ1467",
+        "bp3d_FJ1467M",
+        "bp3d_FJ1468",
+        "bp3d_FJ1468M",
+        "bp3d_FJ1513",
+        "bp3d_FJ1513M"
+      ]
+    },
+    {
+      "name": "supraspinatus",
+      "region": "shoulder",
+      "modelIds": [
+        "bp3d_FJ1506",
+        "bp3d_FJ1506M"
+      ]
+    },
+    {
+      "name": "infraspinatus",
+      "region": "shoulder",
+      "modelIds": [
+        "bp3d_FJ1500",
+        "bp3d_FJ1500M"
+      ]
+    },
+    {
+      "name": "teres major",
+      "region": "shoulder",
+      "modelIds": [
+        "bp3d_FJ1507",
+        "bp3d_FJ1507M"
+      ]
+    },
+    {
+      "name": "teres minor",
+      "region": "shoulder",
+      "modelIds": [
+        "bp3d_FJ1508",
+        "bp3d_FJ1508M"
+      ]
+    },
+    {
+      "name": "subscapularis",
+      "region": "shoulder",
+      "modelIds": []
+    },
+    {
+      "name": "biceps brachii",
+      "region": "arm",
+      "modelIds": [
+        "bp3d_FJ1478",
+        "bp3d_FJ1478M",
+        "bp3d_FJ1512",
+        "bp3d_FJ1512M"
+      ]
+    },
+    {
+      "name": "brachialis",
+      "region": "arm",
+      "modelIds": [
+        "bp3d_FJ1486",
+        "bp3d_FJ1486M"
+      ]
+    },
+    {
+      "name": "coracobrachialis",
+      "region": "arm",
+      "modelIds": [
+        "bp3d_FJ1488",
+        "bp3d_FJ1488M"
+      ]
+    },
+    {
+      "name": "triceps brachii",
+      "region": "arm",
+      "modelIds": [
+        "bp3d_FJ1477",
+        "bp3d_FJ1477M",
+        "bp3d_FJ1479",
+        "bp3d_FJ1479M",
+        "bp3d_FJ1480",
+        "bp3d_FJ1480M"
+      ]
+    },
+    {
+      "name": "anconeus",
+      "region": "arm",
+      "modelIds": [
+        "bp3d_FJ1485",
+        "bp3d_FJ1485M"
+      ]
+    },
+    {
+      "name": "pronator teres",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1474",
+        "bp3d_FJ1474M",
+        "bp3d_FJ1516",
+        "bp3d_FJ1516M"
+      ]
+    },
+    {
+      "name": "flexor carpi radialis",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1496",
+        "bp3d_FJ1496M"
+      ]
+    },
+    {
+      "name": "palmaris longus",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1502",
+        "bp3d_FJ1502M"
+      ]
+    },
+    {
+      "name": "flexor carpi ulnaris",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1473",
+        "bp3d_FJ1473M",
+        "bp3d_FJ1518",
+        "bp3d_FJ1518M"
+      ]
+    },
+    {
+      "name": "flexor digitorum superficialis",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1475",
+        "bp3d_FJ1475M",
+        "bp3d_FJ1499",
+        "bp3d_FJ1499M"
+      ]
+    },
+    {
+      "name": "flexor digitorum profundus",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1497",
+        "bp3d_FJ1497M"
+      ]
+    },
+    {
+      "name": "flexor pollicis longus",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1498",
+        "bp3d_FJ1498M"
+      ]
+    },
+    {
+      "name": "pronator quadratus",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1503",
+        "bp3d_FJ1503M"
+      ]
+    },
+    {
+      "name": "brachioradialis",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1487",
+        "bp3d_FJ1487M"
+      ]
+    },
+    {
+      "name": "extensor carpi radialis longus",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1490",
+        "bp3d_FJ1490M"
+      ]
+    },
+    {
+      "name": "extensor carpi radialis brevis",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1489",
+        "bp3d_FJ1489M"
+      ]
+    },
+    {
+      "name": "extensor digitorum",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1492",
+        "bp3d_FJ1492M"
+      ]
+    },
+    {
+      "name": "extensor carpi ulnaris",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1472",
+        "bp3d_FJ1472M",
+        "bp3d_FJ1517",
+        "bp3d_FJ1517M"
+      ]
+    },
+    {
+      "name": "supinator",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1505",
+        "bp3d_FJ1505M"
+      ]
+    },
+    {
+      "name": "abductor pollicis longus",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1484",
+        "bp3d_FJ1484M"
+      ]
+    },
+    {
+      "name": "extensor pollicis longus",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1495",
+        "bp3d_FJ1495M"
+      ]
+    },
+    {
+      "name": "extensor pollicis brevis",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1494",
+        "bp3d_FJ1494M"
+      ]
+    },
+    {
+      "name": "extensor indicis",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1493",
+        "bp3d_FJ1493M"
+      ]
+    },
+    {
+      "name": "extensor digiti minimi",
+      "region": "forearm",
+      "modelIds": [
+        "bp3d_FJ1491",
+        "bp3d_FJ1491M"
+      ]
+    },
+    {
+      "name": "abductor pollicis brevis",
+      "region": "hand",
+      "modelIds": [
+        "bp3d_FJ1483",
+        "bp3d_FJ1483M"
+      ]
+    },
+    {
+      "name": "flexor pollicis brevis",
+      "region": "hand",
+      "modelIds": [
+        "bp3d_FJ1469",
+        "bp3d_FJ1469M",
+        "bp3d_FJ1514",
+        "bp3d_FJ1514M"
+      ]
+    },
+    {
+      "name": "opponens pollicis",
+      "region": "hand",
+      "modelIds": [
+        "bp3d_FJ1501",
+        "bp3d_FJ1501M"
+      ]
+    },
+    {
+      "name": "adductor pollicis",
+      "region": "hand",
+      "modelIds": [
+        "bp3d_FJ1481",
+        "bp3d_FJ1481M",
+        "bp3d_FJ1515",
+        "bp3d_FJ1515M"
+      ]
+    },
+    {
+      "name": "palmaris brevis",
+      "region": "hand",
+      "modelIds": []
+    },
+    {
+      "name": "lumbricals of hand",
+      "region": "hand",
+      "modelIds": [
+        "bp3d_FJ1510",
+        "bp3d_FJ1510M"
+      ]
+    },
+    {
+      "name": "interossei of hand",
+      "region": "hand",
+      "modelIds": [
+        "bp3d_FJ1509",
+        "bp3d_FJ1509M",
+        "bp3d_FJ1511",
+        "bp3d_FJ1511M"
+      ]
+    },
+    {
+      "name": "abductor digiti minimi of hand",
+      "region": "hand",
+      "modelIds": [
+        "bp3d_FJ1466",
+        "bp3d_FJ1466M"
+      ]
+    },
+    {
+      "name": "flexor digiti minimi brevis of hand",
+      "region": "hand",
+      "modelIds": [
+        "bp3d_FJ1470",
+        "bp3d_FJ1470M"
+      ]
+    },
+    {
+      "name": "opponens digiti minimi of hand",
+      "region": "hand",
+      "modelIds": [
+        "bp3d_FJ1482",
+        "bp3d_FJ1482M"
+      ]
+    },
+    {
+      "name": "coccygeus",
+      "region": "pelvis",
+      "modelIds": [
+        "bp3d_FJ1449M",
+        "bp3d_FJ2542",
+        "bp3d_FJ2547"
+      ]
+    },
+    {
+      "name": "iliococcygeus",
+      "region": "pelvis",
+      "modelIds": [
+        "bp3d_FJ1453M",
+        "bp3d_FJ2544",
+        "bp3d_FJ2549"
+      ]
+    },
+    {
+      "name": "pubococcygeus",
+      "region": "pelvis",
+      "modelIds": [
+        "bp3d_FJ1457M",
+        "bp3d_FJ2545",
+        "bp3d_FJ2550"
+      ]
+    },
+    {
+      "name": "puborectalis",
+      "region": "pelvis",
+      "modelIds": [
+        "bp3d_FJ1458M",
+        "bp3d_FJ2546",
+        "bp3d_FJ2551"
+      ]
+    },
+    {
+      "name": "perineal",
+      "region": "pelvis",
+      "modelIds": [
+        "bp3d_FJ1450"
+      ]
+    },
+    {
+      "name": "external anal sphincter",
+      "region": "pelvis",
+      "modelIds": [
+        "bp3d_FJ1450M",
+        "bp3d_FJ2543",
+        "bp3d_FJ2548"
+      ]
+    },
+    {
+      "name": "gluteus maximus",
+      "region": "gluteal",
+      "modelIds": [
+        "bp3d_FJ1418",
+        "bp3d_FJ1418M"
+      ]
+    },
+    {
+      "name": "gluteus medius",
+      "region": "gluteal",
+      "modelIds": [
+        "bp3d_FJ1419",
+        "bp3d_FJ1419M"
+      ]
+    },
+    {
+      "name": "gluteus minimus",
+      "region": "gluteal",
+      "modelIds": [
+        "bp3d_FJ1420",
+        "bp3d_FJ1420M"
+      ]
+    },
+    {
+      "name": "tensor fasciae latae",
+      "region": "gluteal",
+      "modelIds": []
+    },
+    {
+      "name": "piriformis",
+      "region": "gluteal",
+      "modelIds": [
+        "bp3d_FJ1428",
+        "bp3d_FJ1428M"
+      ]
+    },
+    {
+      "name": "obturator internus",
+      "region": "gluteal",
+      "modelIds": [
+        "bp3d_FJ1426",
+        "bp3d_FJ1426M"
+      ]
+    },
+    {
+      "name": "gemellus inferior",
+      "region": "gluteal",
+      "modelIds": [
+        "bp3d_FJ1416",
+        "bp3d_FJ1416M"
+      ]
+    },
+    {
+      "name": "gemellus superior",
+      "region": "gluteal",
+      "modelIds": [
+        "bp3d_FJ1417",
+        "bp3d_FJ1417M"
+      ]
+    },
+    {
+      "name": "quadratus femoris",
+      "region": "gluteal",
+      "modelIds": [
+        "bp3d_FJ1432",
+        "bp3d_FJ1432M"
+      ]
+    },
+    {
+      "name": "iliotibial tract",
+      "region": "gluteal",
+      "modelIds": [
+        "bp3d_FJ1423",
+        "bp3d_FJ1423M"
+      ]
+    },
+    {
+      "name": "sartorius",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1434",
+        "bp3d_FJ1434M"
+      ]
+    },
+    {
+      "name": "rectus femoris",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1433",
+        "bp3d_FJ1433M"
+      ]
+    },
+    {
+      "name": "vastus lateralis",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1442",
+        "bp3d_FJ1442M"
+      ]
+    },
+    {
+      "name": "vastus medialis",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1443",
+        "bp3d_FJ1443M"
+      ]
+    },
+    {
+      "name": "vastus intermedius",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1441",
+        "bp3d_FJ1441M"
+      ]
+    },
+    {
+      "name": "iliacus",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1422",
+        "bp3d_FJ1422M"
+      ]
+    },
+    {
+      "name": "psoas major",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1431",
+        "bp3d_FJ1431M"
+      ]
+    },
+    {
+      "name": "pectineus",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1427",
+        "bp3d_FJ1427M"
+      ]
+    },
+    {
+      "name": "adductor longus",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1402",
+        "bp3d_FJ1402M"
+      ]
+    },
+    {
+      "name": "adductor brevis",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1401",
+        "bp3d_FJ1401M"
+      ]
+    },
+    {
+      "name": "adductor magnus",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1403",
+        "bp3d_FJ1403M"
+      ]
+    },
+    {
+      "name": "adductor minimus",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1404",
+        "bp3d_FJ1404M"
+      ]
+    },
+    {
+      "name": "gracilis",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1421",
+        "bp3d_FJ1421M"
+      ]
+    },
+    {
+      "name": "obturator externus",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1425",
+        "bp3d_FJ1425M"
+      ]
+    },
+    {
+      "name": "biceps femoris",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1395",
+        "bp3d_FJ1395M",
+        "bp3d_FJ1444",
+        "bp3d_FJ1444M"
+      ]
+    },
+    {
+      "name": "semitendinosus",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1436",
+        "bp3d_FJ1436M"
+      ]
+    },
+    {
+      "name": "semimembranosus",
+      "region": "thigh",
+      "modelIds": [
+        "bp3d_FJ1435",
+        "bp3d_FJ1435M"
+      ]
+    },
+    {
+      "name": "tibialis anterior",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1439",
+        "bp3d_FJ1439M"
+      ]
+    },
+    {
+      "name": "extensor hallucis longus",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1408",
+        "bp3d_FJ1408M"
+      ]
+    },
+    {
+      "name": "extensor digitorum longus",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1406",
+        "bp3d_FJ1406M"
+      ]
+    },
+    {
+      "name": "fibularis tertius",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1411",
+        "bp3d_FJ1411M"
+      ]
+    },
+    {
+      "name": "fibularis longus",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1410",
+        "bp3d_FJ1410M"
+      ]
+    },
+    {
+      "name": "fibularis brevis",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1409",
+        "bp3d_FJ1409M"
+      ]
+    },
+    {
+      "name": "gastrocnemius",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1394",
+        "bp3d_FJ1394M",
+        "bp3d_FJ1397",
+        "bp3d_FJ1397M"
+      ]
+    },
+    {
+      "name": "soleus",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1437",
+        "bp3d_FJ1437M"
+      ]
+    },
+    {
+      "name": "plantaris",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1429",
+        "bp3d_FJ1429M"
+      ]
+    },
+    {
+      "name": "popliteus",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1430",
+        "bp3d_FJ1430M"
+      ]
+    },
+    {
+      "name": "tibialis posterior",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1440",
+        "bp3d_FJ1440M"
+      ]
+    },
+    {
+      "name": "flexor hallucis longus",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1415",
+        "bp3d_FJ1415M"
+      ]
+    },
+    {
+      "name": "flexor digitorum longus",
+      "region": "leg",
+      "modelIds": [
+        "bp3d_FJ1414",
+        "bp3d_FJ1414M"
+      ]
+    },
+    {
+      "name": "extensor hallucis brevis",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1407",
+        "bp3d_FJ1407M"
+      ]
+    },
+    {
+      "name": "extensor digitorum brevis",
+      "region": "foot",
+      "modelIds": []
+    },
+    {
+      "name": "abductor hallucis",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1400",
+        "bp3d_FJ1400M"
+      ]
+    },
+    {
+      "name": "flexor digitorum brevis",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1413",
+        "bp3d_FJ1413M"
+      ]
+    },
+    {
+      "name": "abductor digiti minimi of foot",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1390",
+        "bp3d_FJ1390M"
+      ]
+    },
+    {
+      "name": "flexor digiti minimi brevis of foot",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1391",
+        "bp3d_FJ1391M"
+      ]
+    },
+    {
+      "name": "opponens digiti minimi of foot",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1399",
+        "bp3d_FJ1399M"
+      ]
+    },
+    {
+      "name": "flexor hallucis brevis",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1393",
+        "bp3d_FJ1393M",
+        "bp3d_FJ1396",
+        "bp3d_FJ1396M"
+      ]
+    },
+    {
+      "name": "adductor hallucis",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1398",
+        "bp3d_FJ1398M",
+        "bp3d_FJ1445",
+        "bp3d_FJ1445M"
+      ]
+    },
+    {
+      "name": "quadratus plantae",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1412",
+        "bp3d_FJ1412M"
+      ]
+    },
+    {
+      "name": "lumbrical of foot",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1383",
+        "bp3d_FJ1383M",
+        "bp3d_FJ1385",
+        "bp3d_FJ1385M",
+        "bp3d_FJ1387",
+        "bp3d_FJ1387M",
+        "bp3d_FJ1389",
+        "bp3d_FJ1389M"
+      ]
+    },
+    {
+      "name": "interosseous of foot",
+      "region": "foot",
+      "modelIds": [
+        "bp3d_FJ1384",
+        "bp3d_FJ1384M",
+        "bp3d_FJ1386",
+        "bp3d_FJ1386M",
+        "bp3d_FJ1388",
+        "bp3d_FJ1388M"
+      ]
+    }
+  ]
+}

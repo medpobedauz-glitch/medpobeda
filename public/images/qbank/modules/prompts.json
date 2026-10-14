@@ -1,0 +1,67 @@
+[
+  {
+    "file": "general.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous sky blue gradient background, filling most of the square. Ivory human skull with upper cervical vertebrae, three-quarter view. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "bones.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous cyan gradient background, filling most of the square. Human femur and a small knee joint showing smooth articular cartilage, anatomically coherent. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "muscles.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous periwinkle gradient background, filling most of the square. Anatomical upper arm muscle specimen showing red biceps muscle fibers and ivory tendon attachments. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "systems.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous sky blue gradient background, filling most of the square. Human heart with red arteries blue veins and subtle green lymphatic and gold nerve branches. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "osteology.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous teal gradient background, filling most of the square. Front view human skeleton from skull to pelvis, bones and articulations. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "neuro.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous violet gradient background, filling most of the square. Human brain three-quarter lateral view with detailed gyri and short brainstem. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "head-neck.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous warm amber gradient background, filling most of the square. Lateral human head and neck anatomical model with red facial and neck muscles, no skin on visible side. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "upper-limb.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous green gradient background, filling most of the square. Complete anatomical upper limb shoulder to fingertips showing muscles and tendons, include hand, vertical composition. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "lower-limb.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous violet gradient background, filling most of the square. Complete anatomical lower limb hip to toes showing muscles and tendons, include foot, vertical composition. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "ribs.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous sky blue gradient background, filling most of the square. Complete human rib cage with sternum and thoracic vertebrae, frontal view. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "abdomen.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous warm amber gradient background, filling most of the square. Anterior abdominal digestive organ model with liver stomach small intestine and colon in correct relative arrangement. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "pelvis.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous lavender gradient background, filling most of the square. Human bony pelvis with sacrum and proximal femoral heads and subtle pelvic floor muscle sling. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  },
+  {
+    "file": "back.png",
+    "prompt": "Use case: scientific-educational. Generate one square premium 3D medical atlas illustration for a small module thumbnail on an anatomy education website. Match the supplied website reference aesthetic: realistic sculpted anatomical specimen, rich but tasteful color, precise dimensional contours, detailed materials, soft studio lighting. Center the complete specimen with 10% margins against a clean luminous teal gradient background, filling most of the square. Human vertebral column from cervical to sacrum, gentle natural curvature and small attached deep back muscles. Educational non-graphic anatomical model, polished medical publisher quality. No words, labels, icons, border, watermark, cartoon, emojis, flat vector art or UI. Single illustration, not a collage.",
+    "tool": "built-in image_gen"
+  }
+]

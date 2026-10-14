@@ -1,0 +1,234 @@
+{
+  "sourceRevision": "7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+  "sourceSha256": "6e84529b60b64cc8f8d5cef665fda932e359e828b66d0c2dd44ec1bd9d0bd01f",
+  "sourceUrl": "https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+  "license": "CC BY-SA 4.0",
+  "transform": "x*0.001, z*0.001+0.0781112, -y*0.001-0.1; normal x,z,-y",
+  "changes": "Selected eight existing meshes; transformed units/axes to the atlas; retained source topology and normals; replaced display materials.",
+  "structures": {
+    "za_left_rectus_abdominis": {
+      "name": "Left rectus abdominis",
+      "system": "muscular",
+      "layer": "muscles",
+      "center": [
+        0.04237815737724304,
+        1.0573697449218749,
+        0.07830701446533203
+      ],
+      "file": "abdominal.glb",
+      "sourceId": "z-anatomy",
+      "sourceParts": [
+        {
+          "id": "left rectus abdominis",
+          "conceptId": "Z-Anatomy",
+          "name": "Left rectus abdominis"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+      "anatomy": {
+        "region": "abdomen",
+        "side": "left",
+        "layer": "superficial",
+        "aliases": [
+          "abs",
+          "abdominals",
+          "rectus abdominis"
+        ]
+      }
+    },
+    "za_right_rectus_abdominis": {
+      "name": "Right rectus abdominis",
+      "system": "muscular",
+      "layer": "muscles",
+      "center": [
+        -0.042378194212913514,
+        1.0573699585449219,
+        0.07830702972412108
+      ],
+      "file": "abdominal.glb",
+      "sourceId": "z-anatomy",
+      "sourceParts": [
+        {
+          "id": "right rectus abdominis",
+          "conceptId": "Z-Anatomy",
+          "name": "Right rectus abdominis"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+      "anatomy": {
+        "region": "abdomen",
+        "side": "right",
+        "layer": "superficial",
+        "aliases": [
+          "abs",
+          "abdominals",
+          "rectus abdominis"
+        ]
+      }
+    },
+    "za_left_internal_oblique": {
+      "name": "Left internal oblique",
+      "system": "muscular",
+      "layer": "muscles",
+      "center": [
+        0.06500039088726044,
+        1.0486511169921875,
+        0.030438911437988284
+      ],
+      "file": "abdominal.glb",
+      "sourceId": "z-anatomy",
+      "sourceParts": [
+        {
+          "id": "left internal oblique",
+          "conceptId": "Z-Anatomy",
+          "name": "Left internal oblique"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+      "anatomy": {
+        "region": "abdomen",
+        "side": "left",
+        "layer": "intermediate",
+        "aliases": []
+      }
+    },
+    "za_right_internal_oblique": {
+      "name": "Right internal oblique",
+      "system": "muscular",
+      "layer": "muscles",
+      "center": [
+        -0.06500035595893859,
+        1.0486508118164062,
+        0.030439504623413077
+      ],
+      "file": "abdominal.glb",
+      "sourceId": "z-anatomy",
+      "sourceParts": [
+        {
+          "id": "right internal oblique",
+          "conceptId": "Z-Anatomy",
+          "name": "Right internal oblique"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+      "anatomy": {
+        "region": "abdomen",
+        "side": "right",
+        "layer": "intermediate",
+        "aliases": []
+      }
+    },
+    "za_left_transversus_abdominis": {
+      "name": "Left transversus abdominis",
+      "system": "muscular",
+      "layer": "muscles",
+      "center": [
+        0.06828260457515717,
+        1.0545900818359375,
+        0.016405429840087887
+      ],
+      "file": "abdominal.glb",
+      "sourceId": "z-anatomy",
+      "sourceParts": [
+        {
+          "id": "left transversus abdominis",
+          "conceptId": "Z-Anatomy",
+          "name": "Left transversus abdominis"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+      "anatomy": {
+        "region": "abdomen",
+        "side": "left",
+        "layer": "deep",
+        "aliases": []
+      }
+    },
+    "za_right_transversus_abdominis": {
+      "name": "Right transversus abdominis",
+      "system": "muscular",
+      "layer": "muscles",
+      "center": [
+        -0.06828263020515443,
+        1.0545904175292968,
+        0.016405462265014645
+      ],
+      "file": "abdominal.glb",
+      "sourceId": "z-anatomy",
+      "sourceParts": [
+        {
+          "id": "right transversus abdominis",
+          "conceptId": "Z-Anatomy",
+          "name": "Right transversus abdominis"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+      "anatomy": {
+        "region": "abdomen",
+        "side": "right",
+        "layer": "deep",
+        "aliases": []
+      }
+    },
+    "za_left_quadratus_lumborum": {
+      "name": "Left quadratus lumborum",
+      "system": "muscular",
+      "layer": "muscles",
+      "center": [
+        0.04341249942779542,
+        1.0467187134277345,
+        -0.055221499443054205
+      ],
+      "file": "abdominal.glb",
+      "sourceId": "z-anatomy",
+      "sourceParts": [
+        {
+          "id": "left quadratus lumborum",
+          "conceptId": "Z-Anatomy",
+          "name": "Left quadratus lumborum"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+      "anatomy": {
+        "region": "abdomen",
+        "side": "left",
+        "layer": "deep",
+        "aliases": []
+      }
+    },
+    "za_right_quadratus_lumborum": {
+      "name": "Right quadratus lumborum",
+      "system": "muscular",
+      "layer": "muscles",
+      "center": [
+        -0.04341249942779542,
+        1.0467187134277345,
+        -0.055221499443054205
+      ],
+      "file": "abdominal.glb",
+      "sourceId": "z-anatomy",
+      "sourceParts": [
+        {
+          "id": "right quadratus lumborum",
+          "conceptId": "Z-Anatomy",
+          "name": "Right quadratus lumborum"
+        }
+      ],
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd",
+      "anatomy": {
+        "region": "abdomen",
+        "side": "right",
+        "layer": "deep",
+        "aliases": []
+      }
+    }
+  }
+}

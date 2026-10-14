@@ -1,0 +1,75 @@
+/* MedPobeda — Student Dashboard styles */
+.student-dashboard { min-height: 100vh; background: #F8FAFC; padding-top: 80px; }
+.sd-shell { display: grid; grid-template-columns: 280px 1fr; max-width: 1200px; margin: 0 auto; gap: 24px; padding: 24px; }
+
+/* Sidebar */
+.sd-sidebar { position: sticky; top: 80px; align-self: start; }
+.sd-profile-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 16px; padding: 24px; text-align: center; margin-bottom: 16px; }
+.sd-avatar { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #1A6BCC, #00B4A6); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; overflow: hidden; }
+.sd-avatar__initials { color: #fff; font-size: 24px; font-weight: 700; }
+.sd-avatar__img { width: 100%; height: 100%; object-fit: cover; }
+.sd-name { font-size: 18px; font-weight: 700; color: #0B1D3A; margin: 0 0 6px; }
+.sd-meta { font-size: 13.5px; color: #64748B; margin: 0; line-height: 1.5; }
+.sd-meta--sub { font-size: 12.5px; }
+
+/* Sidebar nav */
+.sd-nav { background: #fff; border: 1px solid #E2E8F0; border-radius: 16px; padding: 8px; display: flex; flex-direction: column; gap: 2px; }
+.sd-nav__link { display: block; padding: 11px 14px; border-radius: 10px; color: #334155; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.15s; }
+.sd-nav__link:hover { background: #F1F5F9; color: #1A6BCC; }
+.sd-nav__link.is-active { background: #E8EEF4; color: #1A6BCC; font-weight: 600; }
+
+/* Main content */
+.sd-main { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.sd-loading, .sd-error { padding: 40px; text-align: center; color: #64748B; }
+
+/* Stat cards */
+.sd-stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.sd-stat { background: #fff; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px; text-align: center; }
+.sd-stat__value { display: block; font-size: 28px; font-weight: 800; color: #0B1D3A; line-height: 1.2; }
+.sd-stat__label { display: block; font-size: 12px; color: #64748B; margin-top: 4px; }
+.sd-stat--correct .sd-stat__value { color: #16a34a; }
+.sd-stat--incorrect .sd-stat__value { color: #dc2626; }
+.sd-stat--accuracy .sd-stat__value { color: #1A6BCC; }
+.sd-stat--streak .sd-stat__value { color: #F28C28; }
+
+/* Cards */
+.sd-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px; }
+.sd-card__title { font-size: 16px; font-weight: 700; color: #0B1D3A; margin: 0 0 14px; }
+.sd-empty { color: #94A3B8; font-size: 14px; margin: 0; }
+
+/* Continue learning */
+.sd-continue { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.sd-continue .sd-card__title { margin: 0; flex: 1; }
+.sd-continue__path { font-size: 14px; color: #64748B; margin: 0; }
+.sd-continue--empty { flex-direction: column; align-items: flex-start; gap: 8px; }
+
+/* Progress bars */
+.sd-progress-list { display: flex; flex-direction: column; gap: 12px; }
+.sd-progress-item__label { display: flex; justify-content: space-between; font-size: 13.5px; color: #334155; margin-bottom: 5px; }
+.sd-progress-item__label span:last-child { font-weight: 700; color: #1A6BCC; }
+.sd-progress-bar { height: 8px; background: #F1F5F9; border-radius: 4px; overflow: hidden; }
+.sd-progress-bar__fill { height: 100%; background: linear-gradient(90deg, #1A6BCC, #00B4A6); border-radius: 4px; transition: width 0.3s; }
+
+/* Weak areas */
+.sd-weak-list { display: flex; flex-direction: column; gap: 8px; }
+.sd-weak-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: #FEF2F2; border-radius: 8px; font-size: 13.5px; }
+.sd-weak-item strong { color: #dc2626; font-weight: 700; }
+
+/* Activity */
+.sd-activity-list { display: flex; flex-direction: column; gap: 6px; }
+.sd-activity-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #F1F5F9; font-size: 13.5px; }
+.sd-activity-item:last-child { border-bottom: 0; }
+.sd-activity-day { color: #64748B; min-width: 80px; }
+.sd-activity-item strong { font-weight: 700; color: #16a34a; }
+
+/* Achievements */
+.sd-achievement-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.sd-achievement-badge { display: inline-block; padding: 6px 12px; background: #FEF3C7; color: #92400E; border-radius: 20px; font-size: 12px; font-weight: 600; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sd-shell { grid-template-columns: 1fr; padding: 16px; }
+  .sd-sidebar { position: static; }
+  .sd-stats { grid-template-columns: repeat(2, 1fr); }
+  .sd-continue { flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {sanitizeExplanationBlocks,renderExplanationBlocks} from '../shared/explanations.js';
+import {sanitizeDelta} from '../shared/rich-explanation.js';
+const delta={ops:[{insert:'Definition'},{insert:'\n',attributes:{header:2}},{insert:'Medical term',attributes:{bold:true,italic:true,underline:true,color:'#b02a2a',background:'#fff3cd',size:'large'}},{insert:'\n'},{insert:'Separate paragraph\n'},{insert:'Point one'},{insert:'\n',attributes:{list:'bullet'}},{insert:'First step'},{insert:'\n',attributes:{list:'ordered'}},{insert:'Aligned\u2028line break'},{insert:'\n',attributes:{align:'center'}}]};
+const blocks=sanitizeExplanationBlocks([{type:'rich_text',delta}]);
+assert.deepEqual(sanitizeExplanationBlocks(blocks),blocks);
+const html=renderExplanationBlocks(blocks);
+for(const token of ['<h2>Definition</h2>','<strong>','<em>','<u>','color:#b02a2a','background-color:#fff3cd','ex-size-large','<p>Separate paragraph</p>','<ul><li>Point one</li></ul>','<ol><li>First step</li></ol>','ex-align-center','Aligned<br>line break']) assert.ok(html.includes(token),token);
+const evil={ops:[{insert:'<script>alert(1)</script><img src=x onerror=alert(1)>',attributes:{color:'red; background:url(javascript:alert(1))',background:'url(https://evil)',link:'javascript:alert(1)',header:'img onerror=x',align:'left" onclick="x',size:'9999px',bold:'yes'}},{insert:{image:'javascript:alert(1)'}},{insert:'\n'}]};
+const safe=renderExplanationBlocks([{type:'rich_text',delta:evil}]);
+assert.ok(!safe.includes('<script'));assert.ok(!safe.includes('<img'));assert.ok(!safe.includes('style='));assert.ok(!safe.includes('onclick'));assert.ok(!safe.includes('href'));
+assert.deepEqual(sanitizeExplanationBlocks([{type:'rich_text',delta:{ops:[{insert:'\n\n'}]}}]),[]);
+assert.equal(sanitizeDelta({ops:[{insert:'x'.repeat(100000)}]}).ops[0].insert.length,60000);
+const legacy=[{type:'paragraph',text:'Existing explanation'},{type:'heading',level:'h3',text:'Section'},{type:'list',ordered:false,items:['one','two']},{type:'table',rows:[['A','B']]},{type:'image',mediaId:1,alt:'Existing image'}];
+assert.equal(sanitizeExplanationBlocks(legacy).length,5);
+assert.ok(renderExplanationBlocks(legacy).includes('/api/public/media/1'));
+console.log('PASS: rich formatting, semantic paragraphs/lists, safe rendering, limits, empty validation, and legacy compatibility.');

@@ -1,0 +1,19 @@
+BodyParts3D 4.0 geometry
+
+BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.
+
+Official license statement (updated 2025-02-27; verified 2026-09-08):
+https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html
+License: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Browser geometry packaging: https://github.com/ashemag/human-atlas
+Exact source revision: see structure-index.json sourceRevision.
+The upstream application code is MIT licensed; geometry has the separate
+CC BY 4.0 license above. This project uses the geometry, not upstream UI assets.
+
+Modifications by MedPobeda: classification/grouping, separate mandible and major
+vessels, corrected GLB buffers/normals, retained original identifiers, conversion
+to GLB and gzip compression. Attribution does not imply endorsement.
+
+The model is an adult male educational reference, not a diagnostic instrument.

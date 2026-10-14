@@ -1,0 +1,157 @@
+/* ==================== MEDPOBEDA MOBILE FIXES ====================
+   Comprehensive small-screen polish. Loaded AFTER the page styles so
+   these rules consistently override desktop-first defaults. Uses the
+   same design tokens (--med-blue, --border-color, --radius-*) as the
+   rest of the site — no new colors, gradients or visual style.
+   Breakpoints mirror the existing site (900 / 768 / 560 / 480). */
+
+/* ---------- Global containment ---------- */
+html, body { overflow-x: hidden; }
+
+img, svg, video, canvas { max-width: 100%; height: auto; }
+
+/* ---------- Header: never overflow on narrow screens ---------- */
+@media (max-width: 600px) {
+  .header__inner { height: 60px; padding: 0 12px; gap: 8px; }
+  .brand__word { font-size: 18px; }
+  .brand__mark { width: 26px; height: 26px; }
+  .header__actions { gap: 6px; }
+  .lang-selector__btn { padding: 6px 8px; font-size: 12px; width: auto; }
+  .lang-selector__current { letter-spacing: 0; }
+  .header__burger { width: 40px; height: 40px; padding: 8px; }
+  .header__burger-line { width: 18px; }
+
+  /* Mobile drawer: full width, not cramped */
+  .nav { width: 100%; right: 0; top: 60px; padding: 16px 16px 40px; }
+
+  /* Keep the theme toggle compact */
+  .theme-toggle { width: 38px; height: 38px; }
+}
+
+@media (max-width: 380px) {
+  .brand__word { font-size: 16px; }
+  .lang-selector__btn { padding: 5px 6px; }
+  .lang-selector__current { display: none; } /* keep only the globe icon */
+}
+
+/* ---------- Layout containers ---------- */
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .section { padding: 40px 0; }
+  .page-header__inner { padding: 24px 16px 20px; }
+  .page-header__title { font-size: 22px; }
+  .page-header__lede { font-size: 14px; }
+  .breadcrumb__inner { padding: 10px 16px; overflow-x: auto; white-space: nowrap; }
+}
+
+/* ---------- Grids: collapse on small phones ---------- */
+@media (max-width: 560px) {
+  .about-grid, .contact-grid, .qbank-grid,
+  .faculty-grid, .platform-grid, .tests-grid, .subjects-grid,
+  .footer__grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---------- Home hero ---------- */
+@media (max-width: 480px) {
+  .hero { padding: 96px 0 48px; }
+  .hero__title { font-size: 27px; line-height: 1.2; }
+  .hero__subtitle { font-size: 15px; }
+  .hero__actions .btn { width: 100%; }
+  .section-header__title { font-size: 24px; }
+  .section-header__subtitle { font-size: 14px; }
+}
+
+/* ---------- QBank / Learn pages ---------- */
+@media (max-width: 480px) {
+  .qcard__art { height: 94px; }
+  .qcard__title { font-size: 15px; margin-bottom: 4px; }
+  .qcard__desc { font-size: 12.5px; }
+  .qcard__body { padding: 12px 12px 6px; }
+  .qcard__foot { padding: 10px 12px; flex-wrap: wrap; gap: 6px; }
+
+  .learn-module__toggle { padding: 14px; gap: 10px; }
+  .learn-module__art { width: 64px !important; height: 64px !important; }
+  .learn-module__name { font-size: 14px; }
+  .learn-module__meta { font-size: 11px; }
+  .learn-module__action { font-size: 11px; padding: 8px 10px; }
+}
+
+/* ---------- MCQ practice ---------- */
+@media (max-width: 560px) {
+  body.practice-fullscreen #learn-practice { padding: 12px; }
+  .pq { padding: 16px; border-radius: 12px; }
+  .pq__q { font-size: 16px; margin-bottom: 14px; }
+  .pq__opt { padding: 12px 12px; gap: 10px; }
+  .pq__opt-key { width: 26px; height: 26px; font-size: 12px; }
+  .pq__opt-text { font-size: 14px; }
+  .pq__meta { flex-wrap: wrap; gap: 6px; }
+  .pq__topictag { font-size: 10px; padding: 3px 8px; }
+  .quiz-topbar { flex-wrap: wrap; gap: 8px; }
+  .quiz-timer { font-size: 12px; padding: 3px 10px; }
+
+  /* Question image and explanation never overflow */
+  .question-media { max-height: 40vh; }
+  .pq__expl img { max-height: 40vh; border-radius: 8px; }
+}
+
+@media (max-width: 400px) {
+  .pq { padding: 12px; }
+  .pq__q { font-size: 15px; }
+  .pq__opts { gap: 8px; }
+  .pq__opt { padding: 10px; }
+}
+
+/* ---------- Bookmarks & question details ---------- */
+@media (max-width: 560px) {
+  #pq-bookmark { width: 100%; justify-content: center; }
+  .question-detail { padding: 0.8rem 0; font-size: 14px; }
+  .question-public-id { font-size: 14px; }
+  #acc-bookmarks .btn { width: 100%; justify-content: center; }
+}
+
+/* ---------- Forms & auth ---------- */
+@media (max-width: 480px) {
+  .auth-card { padding: 20px 16px; border-radius: 14px; }
+  .form-input { font-size: 16px; min-height: 44px; } /* prevents iOS zoom */
+  .btn--full { width: 100%; }
+  .auth-alt { font-size: 13px; }
+}
+
+/* ---------- Teacher / popups ---------- */
+@media (max-width: 560px) {
+  .teacher-popup__content { width: 92vw; max-height: 80vh; }
+  .teacher-card { gap: 10px; padding: 10px 12px; }
+  .teacher-card__btn { width: 100%; justify-content: center; }
+}
+
+/* ---------- Admin pages on small screens ---------- */
+@media (max-width: 768px) {
+  .admin-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .admin-cascade { grid-template-columns: 1fr !important; }
+  .admin-actions { flex-direction: column; align-items: stretch; }
+  .admin-actions .btn { justify-content: center; }
+  .admin-topbar { flex-wrap: wrap; }
+  .admin-opt-row { grid-template-columns: 2rem minmax(0,1fr) auto; gap: 6px; }
+  .admin-tabs { overflow-x: auto; flex-wrap: nowrap; }
+}
+
+@media (max-width: 480px) {
+  .admin-topbar h1 { font-size: 22px; }
+  .admin-opt-row { grid-template-columns: 1.7rem minmax(0,1fr); }
+  .admin-opt-row .admin-correct { grid-column: 2; }
+}
+
+/* ---------- Contact / misc cards ---------- */
+@media (max-width: 560px) {
+  .contact-item { padding: 14px 14px; }
+  .contact-form-wrap { padding: 18px; }
+  .about-block { padding: 20px; }
+  .pfcard { padding: 16px; }
+  .status-legend { flex-wrap: wrap; gap: 8px; }
+}
+
+/* ---------- Footer ---------- */
+@media (max-width: 480px) {
+  .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .footer__col { padding: 0 16px; }
+}

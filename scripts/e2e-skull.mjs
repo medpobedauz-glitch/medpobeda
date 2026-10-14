@@ -1,0 +1,35 @@
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE || 'playwright');import assert from'node:assert/strict';
+const browser=await chromium.launch({executablePath:process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:3000/en/anatomy-3d?debug=1');
+ const settle=()=>page.waitForFunction(()=>{const v=document.querySelector('#anatomy-atlas')?.__viewer;return v?.allMeshes.length && !v.camAnim && !v.pendingFiles.size;},null,{timeout:60000});await settle();
+ await page.locator('[data-preset="skull"]').click();await settle();
+ assert.equal(await page.evaluate(()=>document.querySelector('#anatomy-atlas').__viewer.snapshot().visibleCount),46);
+ assert(await page.locator('#anatomy-atlas').evaluate(e=>e.classList.contains('atlas-skull-mode')));
+ await page.evaluate(()=>{const v=document.querySelector('#anatomy-atlas').__viewer;window.skullMaterials=new Map(v.allMeshes.filter(m=>m.visible).map(m=>[m,{mat:m.material,json:JSON.stringify(m.material.toJSON()),positions:m.geometry.attributes.position.array.slice()}]));});
+ await page.locator('#anat3d-viewer').scrollIntoViewIfNeeded();
+ const point=await page.evaluate(()=>{const v=document.querySelector('#anatomy-atlas').__viewer,p=v.anchorFor('skull_FJ3200').project(v.camera),r=v.container.getBoundingClientRect();return{x:r.x+(p.x+1)*r.width/2,y:r.y+(1-p.y)*r.height/2};});
+ await page.mouse.move(point.x,point.y);await page.waitForTimeout(150);assert.match(await page.locator('.atlas-hover').innerText(),/Frontal/);
+ await page.mouse.click(point.x,point.y);assert.equal(await page.evaluate(()=>document.querySelector('#anatomy-atlas').__viewer.selectedId),'skull_FJ3200');
+ assert.equal(await page.locator('#anat3d-info-content .anat3d-info__field').count(),0);
+ await page.locator('[data-action="info"]').click();assert.match(await page.locator('#anat3d-info-content').innerText(),/Anterior cranium/);assert.match(await page.locator('#anat3d-info-content').innerText(),/Supraorbital/);
+ await page.locator('[data-action="closeInfo"]').click();assert.equal(await page.locator('#anat3d-info-content .anat3d-info__field').count(),0);
+ await page.locator('[data-action="focus"]').click();await settle();await page.locator('[data-action="isolate"]').click();await settle();assert.equal(await page.evaluate(()=>document.querySelector('#anatomy-atlas').__viewer.snapshot().visibleCount),1);
+ await page.locator('#anat3d-info-content [data-action="showAll"]').click();await settle();assert.equal(await page.evaluate(()=>document.querySelector('#anatomy-atlas').__viewer.snapshot().visibleCount),46);
+ await page.locator('#anat3d-search').fill('maxilla');await page.locator('#anat3d-search-results [data-locate]').first().click();await settle();assert.match(await page.locator('#anat3d-info-content').innerText(),/Maxilla/);
+ await page.locator('[data-action="clear"]').click();
+ assert(await page.evaluate(()=>[...window.skullMaterials].every(([mesh,s])=>mesh.material===s.mat&&JSON.stringify(mesh.material.toJSON())===s.json&&mesh.geometry.attributes.position.array.every((n,i)=>n===s.positions[i]))));
+ await page.locator('#anat3d-search').fill('FJ1254');await page.locator('#anat3d-search-results [data-locate]').first().click();await settle();assert.equal(await page.evaluate(()=>document.querySelector('#anatomy-atlas').__viewer.selectedId),'skull_FJ1254');assert.match(await page.locator('#anat3d-info-content').innerText(),/Molar/);
+ await page.locator('[data-action="reset"]').click();await settle();assert.equal(await page.evaluate(()=>document.querySelector('#anatomy-atlas').__viewer.snapshot().visibleCount),46);
+ await page.locator('#anat3d-viewer').scrollIntoViewIfNeeded();await page.screenshot({path:'/tmp/medpobeda-skull-desktop.png'});
+ await page.locator('#anat3d-search').fill('Peshona');await page.locator('#anat3d-search-results [data-locate]').first().click();await settle();
+ await page.locator('#site-header .lang-selector__btn').click();await page.locator('#site-header [data-lang="ru"]').click();await page.waitForURL('**/ru/anatomy-3d?debug=1');await settle();await page.waitForFunction(()=>document.querySelector('#anat3d-info-content').textContent.includes('Лобная'));assert.match(await page.locator('#anat3d-info-content').innerText(),/Лобная/);
+ await page.locator('[data-preset="skeletal"]').click();await settle();assert(await page.evaluate(()=>!document.querySelector('#anatomy-atlas').__viewer.skullMode));
+ console.log('PASS skull 46 source structures, direct hover/click, requested info, focus/isolate/show all, teeth, reset, localization, exact material/vertex preservation',errors);assert.equal(errors.length,0);
+ const mobile=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await mobile.goto('http://127.0.0.1:3000/uz/anatomy-3d?debug=1');await mobile.waitForFunction(()=>!document.querySelector('#anat3d-search')?.disabled);
+ await mobile.locator('.atlas-sidebar > summary').tap();await mobile.locator('[data-preset="skull"]').tap();await mobile.waitForTimeout(500);
+ await mobile.locator('#anat3d-search').fill('Frontal');await mobile.locator('#anat3d-search-results [data-locate]').first().tap();await mobile.waitForTimeout(500);
+ await mobile.locator('[data-action="info"]').tap();assert.match(await mobile.locator('#anat3d-info-content').innerText(),/Peshona/);await mobile.locator('[data-action="closeInfo"]').tap();await mobile.screenshot({path:'/tmp/medpobeda-skull-mobile.png'});
+ await mobile.locator('[data-action="clear"]').tap();assert(!await mobile.locator('#anat3d-info').evaluate(e=>e.classList.contains('is-open')));console.log('PASS skull mobile info sheet/clear');
+}finally{await browser.close();}

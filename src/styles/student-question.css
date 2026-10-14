@@ -1,0 +1,34 @@
+/* Keep practice in a comfortable centered column on wide computer screens. */
+body.practice-fullscreen #lp-body,
+body.practice-fullscreen .learn-practice__topbar {
+  width: min(100%, 880px);
+  margin-inline: auto;
+  box-sizing: border-box;
+  min-width: 0;
+}
+#lp-body .pq__q { text-align: center; white-space: pre-wrap; overflow-wrap: anywhere; margin-block: 20px 24px; }
+#lp-body .question-media,
+#lp-body .pq__expl img { margin-inline: auto; }
+#lp-body .pq__opt { min-width: 0; }
+#lp-body .pq__opt-text { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+/* Use a regular flex item for the check/cross so it cannot cover text or stats. */
+#lp-body .pq__opt::after { position: static; transform: none; flex: 0 0 24px; }
+#lp-body .pq__navigation { display: flex; justify-content: flex-end; margin-block: 18px; }
+#lp-body #pq-next { min-width: 132px; min-height: 44px; }
+#lp-body .pq__percentage {
+  --ring-color: #b45309;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 46px; width: 46px; height: 46px; border-radius: 50%;
+  background: radial-gradient(closest-side, var(--bg-primary, #fff) 80%, transparent 82%), conic-gradient(var(--ring-color) var(--percentage, 0%), #e2e8f0 0);
+  color: var(--text-primary, #334155); font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums;
+}
+#lp-body .pq__percentage--correct { --ring-color: #15803d; }
+#lp-body .pq__percentage[hidden], #lp-body .pq__community[hidden], #lp-body #pq-next[hidden] { display: none; }
+#lp-body .pq__community { margin-top: 14px; font-size: 13px; color: var(--text-secondary, #475569); }
+#lp-body .pq__community-summary { margin: 0 0 5px; font-weight: 600; }
+#lp-body .pq__community-note { margin: 0; line-height: 1.5; }
+@media (max-width: 600px) {
+  #lp-body .pq__percentage { flex-basis: 40px; width: 40px; height: 40px; font-size: 11px; }
+  #lp-body .pq__opt { gap: 8px; }
+  #lp-body .pq__q { margin-block: 16px 20px; }
+}

@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Runtime storage (SQLite database + uploaded media)
+storage/*.sqlite
+storage/*.sqlite-*
+storage/*.sqlite.*
+storage/uploads/
+
+# Logs & OS junk
+*.log
+npm-debug.log*
+.DS_Store
+
+# Editor/IDE
+.vscode/
+.idea/
+.kilo/
+# PDF import runtime and private source documents
+.venv-pdf/
+storage/pdf-imports/
+__pycache__/
+storage/backups/
+storage/pdf-validation/

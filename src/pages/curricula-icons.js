@@ -1,0 +1,19 @@
+// MedPobeda - Curricula Page - Icons
+export const curriculumIcons = {
+  medicine: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4v24M4 16h24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>',
+  pharmacy: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="6" y="12" width="20" height="16" rx="3" stroke="currentColor" stroke-width="2.5"/><path d="M11 12V8a5 5 0 0110 0v4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>',
+  dentistry: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M10 6c-2 0-4 2-4 6 0 4 2 8 4 12 .5 1 1.5 1 2 0 2-4 4-8 4-12 0-4-2-6-4-6h-2z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M22 6c-2 0-4 2-4 6 0 4 2 8 4 12 .5 1 1.5 1 2 0 2-4 4-8 4-12 0-4-2-6-4-6h-2z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>',
+};
+
+export const subjectIcons = {
+  anatomy: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="2"/><path d="M14 4v20M4 14h20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg>',
+  physiology: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 14h4l3-8 4 16 3-8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  biochemistry: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="18" r="4" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>',
+  histology: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="20" height="20" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 14h20M14 4v20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/></svg>',
+  microbiology: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="2" fill="currentColor"/><circle cx="18" cy="12" r="1.5" fill="currentColor"/><circle cx="14" cy="18" r="2.5" fill="currentColor"/></svg>',
+  pharmacology: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="6" y="10" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M10 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  chemistry: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M10 4v8L4 22a2 2 0 001.7 3h16.6a2 2 0 001.7-3l-6-10V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 4h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  pharmacognosy: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 24V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 12c-4 0-6-3-6-6 4 0 6 3 6 6zM14 12c4 0 6-3 6-6 0 3-2 6-6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  pharmaceutical: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="8" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M10 8V6a2 2 0 014 0v2M14 14v4M12 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+  dental: '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M8 5c-2 0-3 2-3 5 0 3 1 6 3 9 .5 1 1.5 1 2 0 2-3 3-6 3-9 0-3-1-5-3-5h-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M20 5c-2 0-3 2-3 5 0 3 1 6 3 9 .5 1 1.5 1 2 0 2-3 3-6 3-9 0-3-1-5-3-5h-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+};

@@ -1,0 +1,24 @@
+Abdominal supplement — Z-Anatomy / BodyParts3D
+
+The eight structures in abdominal.glb and abdominal.glb.gz are licensed under
+Creative Commons Attribution-ShareAlike 4.0 International:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Attribution: Z-Anatomy — The libre 3D atlas of anatomy.
+Contributors include Gauthier Kervyn, Marcin Zielinski and Lluis Vinent.
+Underlying BodyParts3D: © The Database Center for Life Science (DBCLS),
+original project led by Kousaku Okubo.
+Source license: https://github.com/Z-Anatomy/Models-of-human-anatomy/blob/master/License.txt
+
+Acquired via JohanBellander/BodyExplorer, public/anatomy.glb,
+revision 7d04bf3c4de2bd9cb234dd51d7e6857c099afafd.
+https://github.com/JohanBellander/BodyExplorer/tree/7d04bf3c4de2bd9cb234dd51d7e6857c099afafd
+
+MedPobeda changes: extracted bilateral rectus abdominis, internal oblique,
+transversus abdominis and quadratus lumborum; converted millimetres/Z-up to
+metres/Y-up and registered to the existing atlas coordinate convention;
+retained original topology and normals; assigned display materials and IDs.
+The adapted abdominal asset remains under CC BY-SA 4.0.
+See abdominal-provenance.json and scripts/import-abdominal-models.mjs for
+reproducible extraction, source hash, transformation and structure mapping.
+No endorsement by the original authors is implied.

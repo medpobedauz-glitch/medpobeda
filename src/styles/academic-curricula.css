@@ -1,0 +1,41 @@
+.academic-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; }
+.academic-card--medicine { --track:#0878da; --track-soft:#e7f4ff; --track-border:#cfe9ff; }
+.academic-card--pharmacy { --track:#008c72; --track-soft:#e7faf3; --track-border:#c9eee3; }
+.academic-card--dentistry { --track:#7541d6; --track-soft:#f0eaff; --track-border:#ddceff; }
+.academic-card { position:relative; isolation:isolate; display:flex; flex-direction:column; align-items:flex-start; padding:30px; min-width:0; overflow:hidden; border:1px solid var(--track-border); border-radius:18px; background:linear-gradient(140deg,var(--track-soft),#fff 70%); text-decoration:none; box-shadow:0 8px 28px #173d6010; transition:transform .2s ease,box-shadow .2s ease; }
+.academic-card__art { position:absolute; z-index:-1; right:0; top:0; width:78%; height:185px; object-fit:cover; object-position:right center; mask-image:linear-gradient(to bottom,#000 55%,transparent),linear-gradient(to right,transparent,#000 40%); mask-composite:intersect; }
+.academic-card__icon { display:grid; place-items:center; width:70px; height:70px; border-radius:22px; background:var(--track-soft); color:var(--track); margin:0 0 62px; }
+.academic-card__icon svg { width:38px; height:38px; }
+.academic-card h3 { margin:0 0 16px; color:#102d4e; font-size:26px; line-height:1.2; }
+.academic-card>p { margin:0 0 20px; color:#59758e; line-height:1.65; font-size:15px; }
+.academic-card__tags { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px; }
+.academic-card__tags span { padding:7px 12px; border-radius:100px; background:var(--track-soft); color:var(--track); font-size:12px; font-weight:600; }
+.academic-card__cta { display:flex; align-items:center; gap:18px; border-radius:100px; padding:13px 21px; background:var(--track-soft); color:var(--track); font-weight:600; margin-top:auto; }
+.academic-card:hover { transform:translateY(-5px); box-shadow:0 16px 34px #173d601a; }
+.academic-card:focus-visible { outline:3px solid var(--track); outline-offset:5px; }
+.academic-detail { background:#f7fbff; padding:38px 0 80px; }
+.academic-detail__back { display:inline-block; color:var(--track); margin-bottom:30px; }
+.academic-detail__hero { display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:48px; }
+.academic-detail__hero img { width:100%; height:auto; border-radius:22px; }
+.academic-detail__eyebrow { color:var(--track); font-weight:600; }
+.academic-detail h1 { color:#102d4e; font-size:clamp(34px,4vw,56px); line-height:1.1; margin:12px 0 20px; }
+.academic-detail__hero p { line-height:1.7; margin-bottom:24px; color:#526f88; }
+.academic-detail__facts { display:grid; grid-template-columns:repeat(3,1fr); margin:36px 0 20px; background:white; border:1px solid var(--track-border); border-radius:16px; }
+.academic-detail__facts>div { padding:25px; }
+.academic-detail dt { color:#60758a; font-size:13px; margin-bottom:10px; }
+.academic-detail dd { margin:0; font-size:24px; font-weight:600; color:#16364f; }
+.academic-detail__note { color:#60758a; line-height:1.7; font-size:14px; }
+.academic-detail__note a { color:var(--track); text-decoration:underline; }
+.academic-detail__heading { margin:42px 0 24px; max-width:780px; }
+.academic-detail__heading p { margin-top:12px; color:#60758a; line-height:1.7; }
+.academic-detail__subjects { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.academic-detail__subjects article { padding:26px; border:1px solid #e1eaf2; background:white; border-radius:16px; }
+.academic-detail__number { color:var(--track); font-size:13px; font-weight:600; }
+.academic-detail__subjects h3 { color:#14354f; margin:12px 0; font-size:19px; }
+.academic-detail__subjects p { color:#60758a; line-height:1.65; font-size:14px; }
+@media(max-width:950px) { .academic-cards { gap:15px; } .academic-card { padding:22px; } .academic-card h3 { font-size:22px; } }
+@media(max-width:720px) { .academic-cards,.academic-detail__hero,.academic-detail__facts,.academic-detail__subjects { grid-template-columns:1fr; } .academic-card { padding:28px; } .academic-card__art { width:65%; } .academic-detail__hero { gap:24px; } .academic-detail__hero img { max-height:260px; object-fit:cover; } .academic-detail__facts>div+div { border-top:1px solid #e1eaf2; } }
+@media(prefers-reduced-motion:reduce) { .academic-card { transition:none; } .academic-card:hover { transform:none; } }
+body.dark-mode .academic-card,body.dark-mode .academic-detail,body.dark-mode .academic-detail__subjects article,body.dark-mode .academic-detail__facts { background:#16283b; }
+body.dark-mode .academic-card h3,body.dark-mode .academic-detail h1,body.dark-mode .academic-detail h2,body.dark-mode .academic-detail h3,body.dark-mode .academic-detail dd { color:#e5f1fa; }
+body.dark-mode .academic-card>p,body.dark-mode .academic-detail p,body.dark-mode .academic-detail dt { color:#afc6d9; }

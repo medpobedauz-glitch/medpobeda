@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { expandSkullIndex, bindSkullPrimitives, skullRecord } from '../src/data/skull-anatomy.js';
+const bytes=fs.readFileSync(new URL('../public/models/human-body.glb',import.meta.url));
+const gltf=await new GLTFLoader().parseAsync(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),'');
+const index=expandSkullIndex(JSON.parse(fs.readFileSync(new URL('../public/models/structure-index.json',import.meta.url))).structures);
+const before=new Map();gltf.scene.traverse(m=>{if(m.isMesh)before.set(m,{geometry:m.geometry,material:m.material,position:m.geometry.attributes.position.array.slice()});});
+bindSkullPrimitives(gltf,index);
+const ids=new Set();let teeth=0,bones=0;
+gltf.scene.traverse(mesh=>{
+ if(!mesh.userData.anatomyId)return;
+ const id=mesh.userData.anatomyId;assert(!ids.has(id));ids.add(id);
+ const entry=index[id],record=skullRecord(entry);assert(entry.sourceParts.length===1);
+ assert.equal(record.id,id);assert(record.aliases.includes(entry.name));
+ for(const lang of ['en','uz','ru'])assert(record.info[lang].n);
+ const association=gltf.parser.associations.get(mesh),definition=gltf.parser.json.meshes[association.meshes];
+ assert.equal(definition.extras.sourceMeshIds[association.primitives],entry.sourceParts[0].id);
+ assert.equal(mesh.geometry,before.get(mesh).geometry);assert.equal(mesh.material,before.get(mesh).material);
+ assert.deepEqual(mesh.geometry.attributes.position.array,before.get(mesh).position);
+ if(entry.sourceParent==='teeth')teeth++;else bones++;
+});
+assert.equal(teeth,28);assert.equal(bones,17);
+assert.equal(skullRecord(index.skull_FJ3200).info.en.n,'Frontal bone');
+assert.equal(skullRecord(index.skull_FJ3281).info.en.n,'Temporal bone · Left');
+assert.equal(skullRecord(index.skull_FJ3386).info.en.n,'Temporal bone · Right');
+assert.equal(gltf.parser.json.textures,undefined,'Document source texture availability accurately');
+// Reject an altered source ordering; do not silently assign a wrong bone.
+const source=JSON.parse(JSON.stringify(index));source.skull.sourceParts.reverse();
+gltf.scene.traverse(mesh=>{delete mesh.userData.anatomyId;});bindSkullPrimitives(gltf,source);
+assert(![...before.keys()].some(m=>m.userData.anatomyId?.startsWith('skull_FJ32')));
+console.log('PASS: 17 cranial bones + separate mandible + 28 teeth; unchanged geometry/material references; side labels; mismatched mapping rejected.');
