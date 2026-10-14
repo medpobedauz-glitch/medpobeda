@@ -8,6 +8,7 @@ const config = {
   framework: 'vite',
   buildCommand: 'npm run build',
   outputDirectory: 'dist',
+  trailingSlash: false,
   rewrites: [
     { source: '/api/:path*', destination: `${origin.origin}/api/:path*` },
     { source: '/media/:path*', destination: `${origin.origin}/media/:path*` },
